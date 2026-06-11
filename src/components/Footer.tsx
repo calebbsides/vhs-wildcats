@@ -8,9 +8,13 @@ export function Footer() {
       <div className="container py-12">
         <div className="flex flex-col items-center gap-6 text-center">
           <a href="#top" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md gold-gradient font-display text-lg font-bold text-wildcat-black">
-              V
-            </span>
+            <img
+              src="/logo.png"
+              alt="Valdosta Wildcats"
+              className="h-12 w-auto"
+              width={48}
+              height={48}
+            />
             <span className="font-display text-lg font-bold">{site.teamName}</span>
           </a>
 

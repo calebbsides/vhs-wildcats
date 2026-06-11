@@ -39,9 +39,13 @@ export function Navbar() {
     >
       <nav className="container flex h-16 items-center justify-between">
         <a href="#top" className="flex items-center gap-2">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md gold-gradient font-display text-lg font-bold text-wildcat-black">
-            V
-          </span>
+          <img
+            src="/logo.png"
+            alt="Valdosta Wildcats"
+            className="h-10 w-auto"
+            width={40}
+            height={40}
+          />
           <span className="font-display text-base font-bold tracking-tight xs:text-lg">
             {site.teamName}
           </span>

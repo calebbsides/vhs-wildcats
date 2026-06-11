@@ -19,6 +19,14 @@ export function Hero() {
         aria-hidden
       />
       <div className="container py-12 text-center sm:py-16">
+        <img
+          src="/logo.png"
+          alt="Valdosta Wildcats"
+          className="mx-auto mb-6 h-24 w-auto sm:h-28"
+          width={112}
+          height={112}
+        />
+
         <Badge variant="outline" className="mb-5 px-4 py-1 text-sm uppercase tracking-widest">
           {site.tagline} · {site.season} Season
         </Badge>
