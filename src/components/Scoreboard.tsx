@@ -1,7 +1,11 @@
+import { CalendarPlus } from "lucide-react"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { gamesByDate, getPlayedGames, type Game } from "@/data"
+import { downloadIcs } from "@/lib/ics"
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString("en-US", {
@@ -74,7 +78,19 @@ function ScheduleRow({ game }: { game: Game }) {
             {game.result.outcome} {game.result.wildcatsScore}–{game.result.opponentScore}
           </Badge>
         ) : (
-          <Badge variant="outline">Upcoming</Badge>
+          <div className="flex items-center gap-2">
+            <Badge variant="outline">Upcoming</Badge>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-muted-foreground hover:text-gold"
+              title="Add this game to your calendar"
+              aria-label={`Add ${game.opponent} game to calendar`}
+              onClick={() => downloadIcs([game], `wildcats-vs-${game.id}`)}
+            >
+              <CalendarPlus className="h-4 w-4" />
+            </Button>
+          </div>
         )}
       </CardContent>
     </Card>
@@ -108,10 +124,23 @@ export function Scoreboard() {
       </TabsContent>
 
       <TabsContent value="schedule">
-        <div className="mx-auto grid max-w-2xl gap-3">
-          {gamesByDate.map((g) => (
-            <ScheduleRow key={g.id} game={g} />
-          ))}
+        <div className="mx-auto max-w-2xl">
+          <div className="mb-4 flex justify-center">
+            <Button
+              variant="outline"
+              onClick={() =>
+                downloadIcs(gamesByDate, "valdosta-wildcats-2026-schedule")
+              }
+            >
+              <CalendarPlus className="h-4 w-4" />
+              Add Full Schedule to Calendar
+            </Button>
+          </div>
+          <div className="grid gap-3">
+            {gamesByDate.map((g) => (
+              <ScheduleRow key={g.id} game={g} />
+            ))}
+          </div>
         </div>
       </TabsContent>
     </Tabs>

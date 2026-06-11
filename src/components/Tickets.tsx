@@ -1,9 +1,10 @@
-import { Ticket, CalendarDays, MapPin, ExternalLink } from "lucide-react"
+import { Ticket, CalendarDays, CalendarPlus, MapPin, ExternalLink } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { getUpcomingGames, site, type Game } from "@/data"
+import { downloadIcs } from "@/lib/ics"
 
 function GameTicketRow({ game }: { game: Game }) {
   const date = new Date(game.kickoff)
@@ -45,22 +46,34 @@ function GameTicketRow({ game }: { game: Game }) {
           </div>
         </div>
 
-        {game.isScrimmage ? (
-          <Badge variant="secondary" className="self-start sm:self-center">
-            Scrimmage
-          </Badge>
-        ) : link ? (
-          <Button asChild size="sm" className="w-full sm:w-auto">
-            <a href={link} target="_blank" rel="noreferrer">
-              <Ticket className="h-4 w-4" />
-              Buy Tickets
-            </a>
+        <div className="flex items-center gap-2 sm:shrink-0">
+          {game.isScrimmage ? (
+            <Badge variant="secondary" className="self-start sm:self-center">
+              Scrimmage
+            </Badge>
+          ) : link ? (
+            <Button asChild size="sm" className="flex-1 sm:flex-none">
+              <a href={link} target="_blank" rel="noreferrer">
+                <Ticket className="h-4 w-4" />
+                Buy Tickets
+              </a>
+            </Button>
+          ) : (
+            <Badge variant="outline" className="self-center">
+              Tickets soon
+            </Badge>
+          )}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="h-9 w-9 shrink-0 text-muted-foreground hover:text-gold"
+            title="Add this game to your calendar"
+            aria-label={`Add ${game.opponent} game to calendar`}
+            onClick={() => downloadIcs([game], `wildcats-vs-${game.id}`)}
+          >
+            <CalendarPlus className="h-4 w-4" />
           </Button>
-        ) : (
-          <Badge variant="outline" className="self-start sm:self-center">
-            Tickets soon
-          </Badge>
-        )}
+        </div>
       </CardContent>
     </Card>
   )

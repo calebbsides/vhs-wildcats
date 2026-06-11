@@ -1,9 +1,10 @@
-import { CalendarDays, MapPin, Ticket } from "lucide-react"
+import { CalendarDays, CalendarPlus, MapPin, Ticket } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { getNextGame } from "@/data"
 import { useCountdown } from "@/hooks/useCountdown"
+import { downloadIcs } from "@/lib/ics"
 
 function pad(n: number) {
   return n.toString().padStart(2, "0")
@@ -102,16 +103,24 @@ export function Countdown() {
           </div>
         )}
 
-        {game.ticketsUrl && (
-          <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex flex-col items-stretch justify-center gap-3 xs:flex-row xs:items-center">
+          {game.ticketsUrl && (
             <Button asChild size="lg">
               <a href={game.ticketsUrl} target="_blank" rel="noreferrer">
                 <Ticket className="h-5 w-5" />
                 Get Tickets
               </a>
             </Button>
-          </div>
-        )}
+          )}
+          <Button
+            variant={game.ticketsUrl ? "outline" : "default"}
+            size="lg"
+            onClick={() => downloadIcs([game], `wildcats-vs-${game.id}`)}
+          >
+            <CalendarPlus className="h-5 w-5" />
+            Add to Calendar
+          </Button>
+        </div>
       </div>
     </div>
   )
