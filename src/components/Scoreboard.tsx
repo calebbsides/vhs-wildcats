@@ -58,10 +58,13 @@ function ScheduleRow({ game }: { game: Game }) {
           </p>
         </div>
         <div className="min-w-0 flex-1">
-          <p className="truncate font-semibold">
-            {isAway ? "at " : "vs "}
-            {game.opponent}
-          </p>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+            <p className="font-semibold">
+              {isAway ? "at " : "vs "}
+              {game.opponent}
+            </p>
+            {game.note && <Badge variant="secondary">{game.note}</Badge>}
+          </div>
           <p className="text-xs text-muted-foreground">
             {date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })} · {game.venue}
           </p>

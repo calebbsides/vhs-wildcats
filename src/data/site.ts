@@ -8,7 +8,7 @@ export const site: SiteConfig = {
   teamName: "Valdosta Wildcats",
   shortName: "Wildcats",
   tagline: "Winnersville, USA",
-  season: "2025",
+  season: "2026",
   record: { wins: 0, losses: 0, ties: 0 },
   social: {
     x: "https://x.com/ValdostaFB",

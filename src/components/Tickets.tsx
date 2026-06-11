@@ -30,6 +30,7 @@ function GameTicketRow({ game }: { game: Game }) {
             <Badge variant={game.location === "home" ? "default" : "secondary"}>
               {game.location === "home" ? "Home" : game.location === "away" ? "Away" : "Neutral"}
             </Badge>
+            {game.note && <Badge variant="outline">{game.note}</Badge>}
           </div>
           <div className="mt-1 flex flex-wrap gap-x-4 gap-y-0.5 text-xs text-muted-foreground">
             <span className="inline-flex items-center gap-1">
@@ -44,7 +45,11 @@ function GameTicketRow({ game }: { game: Game }) {
           </div>
         </div>
 
-        {link ? (
+        {game.isScrimmage ? (
+          <Badge variant="secondary" className="self-start sm:self-center">
+            Scrimmage
+          </Badge>
+        ) : link ? (
           <Button asChild size="sm" className="w-full sm:w-auto">
             <a href={link} target="_blank" rel="noreferrer">
               <Ticket className="h-4 w-4" />

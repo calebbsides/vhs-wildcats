@@ -59,11 +59,14 @@ export function Countdown() {
       <div className="relative">
         <div className="flex flex-wrap items-center justify-center gap-3 text-center">
           <Badge variant="outline" className="uppercase">
-            Next Game
+            {game.isScrimmage ? "Scrimmage" : "Next Game"}
           </Badge>
           <Badge variant={game.location === "home" ? "default" : "secondary"}>
             {locationLabel}
           </Badge>
+          {game.note && !game.isScrimmage && (
+            <Badge variant="secondary">{game.note}</Badge>
+          )}
         </div>
 
         <h2 className="mt-4 text-center text-2xl font-bold xs:text-3xl sm:text-5xl">

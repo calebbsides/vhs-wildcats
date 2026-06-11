@@ -1,96 +1,100 @@
 import type { Game } from "./types"
 
 /**
- * The 2025 schedule. SAMPLE DATA — verify dates/opponents against the official
- * GHSA schedule before going live.
+ * The official 2026 Valdosta Wildcats schedule (from the team flyer).
  *
  * Rules the site relies on:
- *  - kickoff MUST be ISO 8601 with a timezone offset (-04:00 EDT / -05:00 EST).
+ *  - kickoff MUST be ISO 8601 with a timezone offset. 2026 Eastern offsets:
+ *    -04:00 (EDT) through Oct 31, then -05:00 (EST) from Nov 1 onward.
+ *  - Kickoff times were NOT on the flyer — all set to a typical 7:30 PM ET.
+ *    Update any that differ once confirmed.
  *  - Add a `result` block once a game is played; leave it off for upcoming games.
  *  - The "next game" = the earliest game whose kickoff is in the future.
+ *  - `isScrimmage: true` keeps a game off the W/L record (e.g. the Aug 7 scrimmage).
  *
- * To add this week's result: find the game, add a `result` object, redeploy.
+ * To add a result: find the game, add a `result` object, redeploy.
  */
 export const schedule: Game[] = [
   {
-    id: "2025-vs-creekside",
-    opponent: "Creekside Seminoles",
-    kickoff: "2025-08-22T19:30:00-04:00",
+    id: "2026-vs-worth-scrimmage",
+    opponent: "Worth County",
+    kickoff: "2026-08-07T19:30:00-04:00",
     location: "home",
     venue: "Cleveland Field at Bazemore-Hyder Stadium",
-    result: {
-      outcome: "W",
-      wildcatsScore: 35,
-      opponentScore: 14,
-      recap: "Cats open the season strong behind a dominant second half.",
-    },
+    note: "Scrimmage",
+    isScrimmage: true,
   },
   {
-    id: "2025-at-lowndes",
-    opponent: "Lowndes Vikings",
-    kickoff: "2025-08-29T19:30:00-04:00",
+    id: "2026-at-jones-co",
+    opponent: "Jones County",
+    kickoff: "2026-08-21T19:30:00-04:00",
     location: "away",
-    venue: "Martin Stadium",
-    result: {
-      outcome: "W",
-      wildcatsScore: 21,
-      opponentScore: 17,
-      recap: "The Winnersville Classic stays in black and gold.",
-    },
+    venue: "Jones County High School",
   },
   {
-    id: "2025-vs-tift",
-    opponent: "Tift County Blue Devils",
-    kickoff: "2025-09-05T19:30:00-04:00",
+    id: "2026-vs-howard",
+    opponent: "Howard",
+    kickoff: "2026-08-28T19:30:00-04:00",
     location: "home",
     venue: "Cleveland Field at Bazemore-Hyder Stadium",
-    result: {
-      outcome: "L",
-      wildcatsScore: 24,
-      opponentScore: 28,
-      recap: "A late drive falls short on the road to a region rival.",
-    },
   },
   {
-    id: "2025-at-colquitt",
-    opponent: "Colquitt County Packers",
-    kickoff: "2025-09-19T19:30:00-04:00",
+    id: "2026-vs-bradwell",
+    opponent: "Bradwell Institute",
+    kickoff: "2026-09-04T19:30:00-04:00",
+    location: "home",
+    venue: "Cleveland Field at Bazemore-Hyder Stadium",
+  },
+  {
+    id: "2026-vs-kipp-atlanta",
+    opponent: "KIPP Atlanta Collegiate",
+    kickoff: "2026-09-11T19:30:00-04:00",
+    location: "home",
+    venue: "Cleveland Field at Bazemore-Hyder Stadium",
+    note: "Homecoming",
+  },
+  {
+    id: "2026-vs-stockbridge",
+    opponent: "Stockbridge",
+    kickoff: "2026-09-25T19:30:00-04:00",
+    location: "home",
+    venue: "Cleveland Field at Bazemore-Hyder Stadium",
+  },
+  {
+    id: "2026-vs-booker",
+    opponent: "Booker High",
+    kickoff: "2026-10-02T19:30:00-04:00",
+    location: "neutral",
+    venue: "Sarasota, FL",
+  },
+  {
+    id: "2026-at-colquitt",
+    opponent: "Colquitt County",
+    kickoff: "2026-10-16T19:30:00-04:00",
     location: "away",
     venue: "Mack Tharpe Stadium",
   },
   {
-    id: "2025-vs-camden",
-    opponent: "Camden County Wildcats",
-    kickoff: "2025-09-26T19:30:00-04:00",
+    id: "2026-vs-camden",
+    opponent: "Camden County",
+    kickoff: "2026-10-23T19:30:00-04:00",
     location: "home",
     venue: "Cleveland Field at Bazemore-Hyder Stadium",
   },
   {
-    id: "2025-at-richmond-hill",
-    opponent: "Richmond Hill Wildcats",
-    kickoff: "2025-10-03T19:30:00-04:00",
+    id: "2026-at-lowndes",
+    opponent: "Lowndes County",
+    kickoff: "2026-10-30T19:30:00-04:00",
     location: "away",
-    venue: "Richmond Hill Stadium",
+    venue: "Martin Stadium",
+    note: "Winnersville Classic",
   },
   {
-    id: "2025-vs-coffee",
-    opponent: "Coffee Trojans",
-    kickoff: "2025-10-17T19:30:00-04:00",
+    id: "2026-vs-richmond-hill",
+    opponent: "Richmond Hill",
+    kickoff: "2026-11-06T19:30:00-05:00",
     location: "home",
     venue: "Cleveland Field at Bazemore-Hyder Stadium",
-  },
-  {
-    id: "2025-at-brunswick",
-    opponent: "Brunswick Pirates",
-    kickoff: "2025-10-24T19:30:00-04:00",
-    location: "away",
-    venue: "Glynn County Stadium",
-  },
-  {
-    id: "2025-vs-ware",
-    opponent: "Ware County Gators",
-    kickoff: "2025-11-07T19:30:00-05:00",
-    location: "home",
-    venue: "Cleveland Field at Bazemore-Hyder Stadium",
+    note: "Senior Night",
   },
 ]

@@ -16,6 +16,10 @@ export interface Game {
   location: "home" | "away" | "neutral"
   /** Venue name shown on the card, e.g. "Cleveland Field at Bazemore-Hyder Stadium" */
   venue: string
+  /** Optional label shown as a badge, e.g. "Homecoming", "Senior Night". */
+  note?: string
+  /** Preseason scrimmage — excluded from the W/L record and ticket links. */
+  isScrimmage?: boolean
   /** Optional: ticket / livestream link */
   ticketsUrl?: string
   /** Result info, present only once the game has been played */

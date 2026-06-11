@@ -36,11 +36,14 @@ export function getUpcomingGames(now: Date = new Date()): Game[] {
   return gamesByDate.filter((g) => new Date(g.kickoff).getTime() > now.getTime())
 }
 
-/** Win-loss-tie record computed from results — no need to hand-maintain it. */
+/**
+ * Win-loss-tie record computed from results — no need to hand-maintain it.
+ * Scrimmages are excluded since they don't count toward the official record.
+ */
 export function getRecord(): { wins: number; losses: number; ties: number } {
   return schedule.reduce(
     (acc, g) => {
-      if (!g.result) return acc
+      if (!g.result || g.isScrimmage) return acc
       if (g.result.outcome === "W") acc.wins += 1
       else if (g.result.outcome === "L") acc.losses += 1
       else acc.ties += 1
