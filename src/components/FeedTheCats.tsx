@@ -1,16 +1,11 @@
-import { UtensilsCrossed, Heart } from "lucide-react"
+import { UtensilsCrossed } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { content, tdClub } from "@/data"
+import { DonateButton } from "@/components/DonateButton"
+import { content } from "@/data"
 
 export function FeedTheCats() {
   const paragraphs = content.feedTheCats.paragraphs
-
-  const donateUrl = tdClub.payment.paypalUsername
-    ? `https://www.paypal.me/${tdClub.payment.paypalUsername}`
-    : "#tdclub"
-  const donateExternal = donateUrl.startsWith("http")
 
   return (
     <div className="mx-auto max-w-3xl">
@@ -38,15 +33,7 @@ export function FeedTheCats() {
           </div>
 
           <div className="mt-8 flex flex-col items-center gap-2">
-            <Button asChild size="lg" className="px-10 text-base">
-              <a
-                href={donateUrl}
-                {...(donateExternal ? { target: "_blank", rel: "noreferrer" } : {})}
-              >
-                <Heart className="h-5 w-5" />
-                Support Feed the Cats
-              </a>
-            </Button>
+            <DonateButton label="Support Feed the Cats" title="Support Feed the Cats" />
             <p className="text-center text-sm text-muted-foreground">
               Help fuel the Wildcats on and off the field.
             </p>

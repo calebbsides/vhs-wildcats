@@ -1,7 +1,7 @@
 import { Heart } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { sponsors, donors, tdClub, type Donor, type Sponsor } from "@/data"
+import { DonateButton } from "@/components/DonateButton"
+import { sponsors, donors, type Donor, type Sponsor } from "@/data"
 
 type Item =
   | { kind: "sponsor"; data: Sponsor }
@@ -69,12 +69,6 @@ export function Supporters() {
   // Slow the scroll down as the list grows so it stays readable.
   const duration = Math.max(30, items.length * 4)
 
-  // Donations go to the TD Club's PayPal; fall back to the TD Club section.
-  const donateUrl = tdClub.payment.paypalUsername
-    ? `https://www.paypal.me/${tdClub.payment.paypalUsername}`
-    : "#tdclub"
-  const donateExternal = donateUrl.startsWith("http")
-
   return (
     <div className="space-y-6">
       <div
@@ -90,15 +84,7 @@ export function Supporters() {
       </div>
 
       <div className="flex flex-col items-center gap-2">
-        <Button asChild size="lg" className="px-10 text-base">
-          <a
-            href={donateUrl}
-            {...(donateExternal ? { target: "_blank", rel: "noreferrer" } : {})}
-          >
-            <Heart className="h-5 w-5" />
-            Donate Now
-          </a>
-        </Button>
+        <DonateButton label="Donate Now" title="Donate to the Wildcats" />
         <p className="text-center text-sm text-muted-foreground">
           Every gift supports Valdosta Wildcats football.
         </p>
