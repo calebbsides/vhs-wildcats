@@ -8,8 +8,11 @@ import { cn } from "@/lib/utils"
 const links = [
   { href: "#next-game", label: "Next Game" },
   { href: "#scores", label: "Scores" },
+  { href: "#tickets", label: "Tickets" },
+  { href: "#tdclub", label: "TD Club" },
   { href: "#video", label: "Video" },
   { href: "#roster", label: "Roster" },
+  { href: "#coaches", label: "Coaches" },
   { href: "#social", label: "Social" },
 ]
 
@@ -38,28 +41,28 @@ export function Navbar() {
           <span className="flex h-9 w-9 items-center justify-center rounded-md gold-gradient font-display text-lg font-bold text-wildcat-black">
             V
           </span>
-          <span className="font-display text-lg font-bold tracking-tight">
+          <span className="font-display text-base font-bold tracking-tight xs:text-lg">
             {site.teamName}
           </span>
         </a>
 
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-0.5 lg:flex">
           {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {l.label}
             </a>
           ))}
           <Button asChild size="sm" className="ml-2">
-            <a href="#newsletter">Join the List</a>
+            <a href="#tickets">Tickets</a>
           </Button>
         </div>
 
         <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md md:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md lg:hidden"
           onClick={() => setOpen((v) => !v)}
           aria-label="Toggle menu"
         >
@@ -68,7 +71,7 @@ export function Navbar() {
       </nav>
 
       {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-md md:hidden">
+        <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
           <div className="container flex flex-col gap-1 py-3">
             {links.map((l) => (
               <a
@@ -81,8 +84,8 @@ export function Navbar() {
               </a>
             ))}
             <Button asChild size="sm" className="mt-2">
-              <a href="#newsletter" onClick={() => setOpen(false)}>
-                Join the List
+              <a href="#tickets" onClick={() => setOpen(false)}>
+                Buy Tickets
               </a>
             </Button>
           </div>

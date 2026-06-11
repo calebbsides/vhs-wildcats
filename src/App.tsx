@@ -1,11 +1,14 @@
 import { Navbar } from "@/components/Navbar"
 import { Hero } from "@/components/Hero"
 import { Section } from "@/components/Section"
-import { Countdown } from "@/components/Countdown"
 import { Scoreboard } from "@/components/Scoreboard"
+import { Tickets } from "@/components/Tickets"
 import { VideoMontage } from "@/components/VideoMontage"
 import { Roster } from "@/components/Roster"
+import { Coaches } from "@/components/Coaches"
+import { TdClub } from "@/components/TdClub"
 import { SocialFeed } from "@/components/SocialFeed"
+import { tdClub } from "@/data"
 import { NewsletterSignup } from "@/components/NewsletterSignup"
 import { Footer } from "@/components/Footer"
 
@@ -17,24 +20,22 @@ export default function App() {
         <Hero />
 
         <Section
-          id="next-game"
-          eyebrow="Mark Your Calendar"
-          title="Countdown to Kickoff"
-          description="The clock is ticking down to the next time the Cats take the field."
-        >
-          <div className="mx-auto max-w-4xl">
-            <Countdown />
-          </div>
-        </Section>
-
-        <Section
           id="scores"
           eyebrow="On the Field"
-          title="The Scoreboard"
-          description="Every result and what's still ahead this season."
+          title="Last Game & Scores"
+          description="The latest result and everything still ahead this season."
           className="bg-wildcat-charcoal/30"
         >
           <Scoreboard />
+        </Section>
+
+        <Section
+          id="tickets"
+          eyebrow="Game Day"
+          title="Buy Tickets"
+          description="Grab your seats for every Friday night under the lights."
+        >
+          <Tickets />
         </Section>
 
         <Section
@@ -42,8 +43,18 @@ export default function App() {
           eyebrow="Film Room"
           title="Video Montage"
           description="Relive the biggest plays and the loudest Friday nights."
+          className="bg-wildcat-charcoal/30"
         >
           <VideoMontage />
+        </Section>
+
+        <Section
+          id="tdclub"
+          eyebrow="Touchdown Club"
+          title={`${tdClub.year} Membership & Parking`}
+          description="Join the Valdosta TD Club to support the program and lock in your season parking and seats."
+        >
+          <TdClub />
         </Section>
 
         <Section
@@ -57,10 +68,20 @@ export default function App() {
         </Section>
 
         <Section
+          id="coaches"
+          eyebrow="The Sideline"
+          title="Coaching Staff"
+          description="The leaders steering the program week to week."
+        >
+          <Coaches />
+        </Section>
+
+        <Section
           id="social"
           eyebrow="Stay Connected"
           title="From the Pride"
           description="The latest from our official channels."
+          className="bg-wildcat-charcoal/30"
         >
           <SocialFeed />
         </Section>

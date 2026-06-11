@@ -57,7 +57,6 @@ export const schedule: Game[] = [
     kickoff: "2025-09-19T19:30:00-04:00",
     location: "away",
     venue: "Mack Tharpe Stadium",
-    ticketsUrl: "https://gofan.co/",
   },
   {
     id: "2025-vs-camden",
@@ -65,7 +64,6 @@ export const schedule: Game[] = [
     kickoff: "2025-09-26T19:30:00-04:00",
     location: "home",
     venue: "Cleveland Field at Bazemore-Hyder Stadium",
-    ticketsUrl: "https://gofan.co/",
   },
   {
     id: "2025-at-richmond-hill",

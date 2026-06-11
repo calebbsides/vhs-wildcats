@@ -38,6 +38,16 @@ export interface Player {
   weightLbs?: number
 }
 
+export interface Coach {
+  name: string
+  /** Role, e.g. "Head Coach", "Offensive Coordinator", "Defensive Line" */
+  title: string
+  /** True for the head coach — gets featured styling. */
+  isHead?: boolean
+  /** Optional units coached, e.g. ["Offense", "Quarterbacks"] */
+  units?: string[]
+}
+
 export interface VideoClip {
   id: string
   title: string
@@ -58,6 +68,44 @@ export interface SocialPost {
   url: string
 }
 
+export interface MembershipTier {
+  id: string
+  name: string
+  /** Price in whole dollars. */
+  price: number
+  /** Short description of what's included. */
+  description: string
+  /** Bullet list of perks shown on the card. */
+  perks?: string[]
+  /** Marks the most popular / recommended tier for highlight styling. */
+  featured?: boolean
+  /** True if this tier is sold out / unavailable. */
+  soldOut?: boolean
+  /** Optional note, e.g. eligibility rules. */
+  note?: string
+}
+
+export interface TdClubConfig {
+  /** Section heading year, e.g. "2026". */
+  year: string
+  /** Membership deadline, human label e.g. "July 1". */
+  deadline: string
+  tiers: MembershipTier[]
+  payment: {
+    paypalEmail?: string
+    cashApp?: string
+    venmo?: string
+    /** Direct PayPal join link if available. */
+    paypalUrl?: string
+  }
+  mailingAddress: string
+  /** Help contact line shown at the bottom of the section. */
+  helpEmail?: string
+  helpPhone?: string
+  /** What to include with payment (e.g. name + address in the notes). */
+  paymentInstructions?: string
+}
+
 export interface SiteConfig {
   teamName: string
   shortName: string
@@ -73,4 +121,10 @@ export interface SiteConfig {
   contactEmail: string
   /** Newsletter provider embed/action URL — see NewsletterSignup component */
   newsletterActionUrl: string
+  /**
+   * The team's main GoFan ticket store URL (sells tickets for all home games).
+   * Leave "" until you have the link — the Tickets section shows a "coming soon"
+   * state. Per-game links can still be set via each game's `ticketsUrl`.
+   */
+  ticketsUrl: string
 }

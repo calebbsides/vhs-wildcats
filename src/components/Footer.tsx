@@ -1,6 +1,6 @@
 import { Facebook, Instagram, Youtube, Mail } from "lucide-react"
 
-import { site } from "@/data"
+import { site, tdClub } from "@/data"
 
 function XMark({ className }: { className?: string }) {
   return (
@@ -49,7 +49,11 @@ export function Footer() {
           </div>
 
           <p className="max-w-md text-sm text-muted-foreground">
-            The source of all things Valdosta High Wildcats football. Go Cats! 🐾
+            The source of all things Valdosta High Wildcats football. Go Cats!
+          </p>
+
+          <p className="text-xs text-muted-foreground">
+            Valdosta Touchdown Club · {tdClub.mailingAddress}
           </p>
 
           <p className="text-xs text-muted-foreground">

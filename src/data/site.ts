@@ -21,4 +21,8 @@ export const site: SiteConfig = {
   // Buttondown example: "https://buttondown.email/api/emails/embed-subscribe/your-handle"
   // Mailchimp example:  "https://yourlist.us21.list-manage.com/subscribe/post?u=XXXX&id=YYYY"
   newsletterActionUrl: "",
+  // TODO: paste your GoFan ticket store URL once you have it, e.g.
+  // "https://gofan.co/app/school/GAxxxxx" — until then the Tickets section
+  // shows a friendly "coming soon" message.
+  ticketsUrl: "",
 }

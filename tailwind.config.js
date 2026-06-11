@@ -5,12 +5,19 @@ export default {
   theme: {
     container: {
       center: true,
-      padding: "1.5rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "1.5rem",
+        lg: "2rem",
+      },
       screens: {
         "2xl": "1280px",
       },
     },
     extend: {
+      screens: {
+        xs: "475px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -41,12 +48,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Wildcats brand — Valdosta black & gold ("Winnersville")
+        // Wildcats brand — Valdosta black & gold ("Winnersville").
+        // Gold sampled to match the official Wildcats logo.
         wildcat: {
           black: "#0a0a0a",
           charcoal: "#161616",
-          gold: "#c8a020",
-          "gold-bright": "#e8c34a",
+          gold: "#e8b80a",
+          "gold-bright": "#ffd21a",
         },
       },
       borderRadius: {

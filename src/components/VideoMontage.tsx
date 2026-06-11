@@ -1,5 +1,5 @@
-import { useState } from "react"
-import { Play } from "lucide-react"
+import { useRef, useState } from "react"
+import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 
 import {
   Dialog,
@@ -69,18 +69,66 @@ function VideoCard({ clip, featured = false }: { clip: VideoClip; featured?: boo
 }
 
 export function VideoMontage() {
+  const scroller = useRef<HTMLDivElement>(null)
+
   if (videos.length === 0) return null
   const [featured, ...rest] = videos
+
+  function scrollBy(direction: 1 | -1) {
+    const el = scroller.current
+    if (!el) return
+    // Scroll by roughly one card-and-a-half so a new clip always comes into view.
+    el.scrollBy({ left: direction * el.clientWidth * 0.8, behavior: "smooth" })
+  }
+
   return (
-    <div className="grid gap-4 lg:grid-cols-3">
-      <div className="lg:col-span-2">
+    <div className="space-y-8">
+      {/* Featured video — large and centered */}
+      <div className="mx-auto max-w-4xl">
         <VideoCard clip={featured} featured />
       </div>
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
-        {rest.slice(0, 3).map((clip) => (
-          <VideoCard key={clip.id} clip={clip} />
-        ))}
-      </div>
+
+      {rest.length > 0 && (
+        <div className="relative">
+          <div className="mb-3 flex items-center justify-between">
+            <h3 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              More Highlights
+            </h3>
+            {rest.length > 1 && (
+              <div className="hidden gap-2 sm:flex">
+                <button
+                  onClick={() => scrollBy(-1)}
+                  aria-label="Scroll left"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition hover:border-wildcat-gold/50 hover:text-gold"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={() => scrollBy(1)}
+                  aria-label="Scroll right"
+                  className="flex h-9 w-9 items-center justify-center rounded-full border border-border bg-card text-muted-foreground transition hover:border-wildcat-gold/50 hover:text-gold"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            )}
+          </div>
+
+          <div
+            ref={scroller}
+            className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {rest.map((clip) => (
+              <div
+                key={clip.id}
+                className="w-[80%] shrink-0 snap-start sm:w-[45%] lg:w-[30%]"
+              >
+                <VideoCard clip={clip} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   )
 }

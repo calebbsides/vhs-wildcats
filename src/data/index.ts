@@ -4,6 +4,8 @@ import type { Game } from "./types"
 export { site } from "./site"
 export { schedule } from "./schedule"
 export { roster } from "./roster"
+export { coaches } from "./coaches"
+export { tdClub } from "./tdclub"
 export { videos, socialPosts } from "./media"
 export * from "./types"
 
@@ -27,6 +29,11 @@ export function getLastPlayedGame(now: Date = new Date()): Game | undefined {
 /** All played games, most recent first. */
 export function getPlayedGames(): Game[] {
   return [...gamesByDate].reverse().filter((g) => g.result)
+}
+
+/** Upcoming games (kickoff in the future), soonest first. */
+export function getUpcomingGames(now: Date = new Date()): Game[] {
+  return gamesByDate.filter((g) => new Date(g.kickoff).getTime() > now.getTime())
 }
 
 /** Win-loss-tie record computed from results — no need to hand-maintain it. */

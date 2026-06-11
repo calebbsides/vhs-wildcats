@@ -11,13 +11,13 @@ function pad(n: number) {
 
 function Unit({ value, label }: { value: number; label: string }) {
   return (
-    <div className="flex flex-col items-center">
-      <div className="flex min-w-[64px] items-center justify-center rounded-lg border border-wildcat-gold/30 bg-wildcat-charcoal px-3 py-4 shadow-inner sm:min-w-[88px] sm:px-5 sm:py-6">
-        <span className="font-display text-4xl font-bold tabular-nums text-gold-gradient sm:text-6xl">
+    <div className="flex min-w-0 flex-1 flex-col items-center sm:flex-none">
+      <div className="flex w-full items-center justify-center rounded-lg border border-wildcat-gold/30 bg-wildcat-charcoal px-1 py-3 shadow-inner sm:w-auto sm:min-w-[88px] sm:px-5 sm:py-6">
+        <span className="font-display text-3xl font-bold tabular-nums text-gold-gradient xs:text-4xl sm:text-6xl">
           {pad(value)}
         </span>
       </div>
-      <span className="mt-2 text-xs font-semibold uppercase tracking-widest text-muted-foreground sm:text-sm">
+      <span className="mt-2 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground sm:text-sm">
         {label}
       </span>
     </div>
@@ -54,7 +54,7 @@ export function Countdown() {
     game.location === "home" ? "HOME" : game.location === "away" ? "AWAY" : "NEUTRAL"
 
   return (
-    <div className="relative overflow-hidden rounded-2xl border border-wildcat-gold/20 bg-card p-6 shadow-xl sm:p-10">
+    <div className="relative overflow-hidden rounded-2xl border border-wildcat-gold/20 bg-card p-4 shadow-xl xs:p-6 sm:p-10">
       <div className="absolute inset-0 bg-grid opacity-40" aria-hidden />
       <div className="relative">
         <div className="flex flex-wrap items-center justify-center gap-3 text-center">
@@ -66,7 +66,7 @@ export function Countdown() {
           </Badge>
         </div>
 
-        <h2 className="mt-4 text-center text-3xl font-bold sm:text-5xl">
+        <h2 className="mt-4 text-center text-2xl font-bold xs:text-3xl sm:text-5xl">
           <span className="text-muted-foreground">Wildcats</span>{" "}
           <span className="text-gold">vs</span>{" "}
           <span>{game.opponent}</span>
@@ -88,13 +88,13 @@ export function Countdown() {
             IT'S GAME TIME 🐾
           </p>
         ) : (
-          <div className="mt-8 flex items-start justify-center gap-2 sm:gap-4">
+          <div className="mt-8 flex items-start justify-center gap-1.5 xs:gap-2 sm:gap-4">
             <Unit value={time.days} label="Days" />
-            <span className="pt-3 font-display text-3xl text-wildcat-gold/40 sm:pt-5 sm:text-5xl">:</span>
+            <span className="hidden pt-3 font-display text-3xl text-wildcat-gold/40 sm:block sm:pt-5 sm:text-5xl">:</span>
             <Unit value={time.hours} label="Hours" />
-            <span className="pt-3 font-display text-3xl text-wildcat-gold/40 sm:pt-5 sm:text-5xl">:</span>
+            <span className="hidden pt-3 font-display text-3xl text-wildcat-gold/40 sm:block sm:pt-5 sm:text-5xl">:</span>
             <Unit value={time.minutes} label="Min" />
-            <span className="pt-3 font-display text-3xl text-wildcat-gold/40 sm:pt-5 sm:text-5xl">:</span>
+            <span className="hidden pt-3 font-display text-3xl text-wildcat-gold/40 sm:block sm:pt-5 sm:text-5xl">:</span>
             <Unit value={time.seconds} label="Sec" />
           </div>
         )}
