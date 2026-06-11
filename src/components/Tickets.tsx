@@ -12,7 +12,7 @@ function GameTicketRow({ game }: { game: Game }) {
 
   return (
     <Card>
-      <CardContent className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
+      <CardContent className="flex items-center gap-3 p-4 sm:gap-4">
         <div className="w-14 shrink-0 text-center">
           <p className="font-display text-lg font-bold leading-none">{date.getDate()}</p>
           <p className="text-xs uppercase text-muted-foreground">
@@ -44,7 +44,7 @@ function GameTicketRow({ game }: { game: Game }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 self-start sm:shrink-0 sm:self-center">
+        <div className="ml-auto flex shrink-0 items-center gap-2">
           {game.isScrimmage && <Badge variant="secondary">Scrimmage</Badge>}
           <Button
             variant="ghost"

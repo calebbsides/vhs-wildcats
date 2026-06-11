@@ -57,16 +57,21 @@
   }
   body {
     @apply bg-background text-foreground font-sans antialiased;
+    /* Mobile: the background isn't fixed, so it spans the whole (tall) page.
+       Fade the gold glow out FAST (small %) so it's black past the hero. */
     background-image:
-      radial-gradient(circle at 15% 10%, hsl(45 75% 52% / 0.06), transparent 40%),
-      radial-gradient(circle at 85% 0%, hsl(45 75% 52% / 0.04), transparent 35%);
+      radial-gradient(ellipse 120% 320px at 50% 0%, hsl(45 75% 52% / 0.07), transparent 70%);
+    background-repeat: no-repeat;
     /* Pleasant tap highlight instead of the default blue flash on mobile. */
     -webkit-tap-highlight-color: hsl(45 75% 52% / 0.12);
   }
-  /* fixed attachment is janky on mobile Safari — only enable it on larger screens. */
+  /* Desktop: background is fixed to the viewport, so a wider glow reads fine. */
   @media (min-width: 768px) {
     body {
       background-attachment: fixed;
+      background-image:
+        radial-gradient(circle at 15% 10%, hsl(45 75% 52% / 0.06), transparent 40%),
+        radial-gradient(circle at 85% 0%, hsl(45 75% 52% / 0.04), transparent 35%);
     }
   }
   h1, h2, h3, h4 {
