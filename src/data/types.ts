@@ -50,6 +50,8 @@ export interface Coach {
   isHead?: boolean
   /** Optional units coached, e.g. ["Offense", "Quarterbacks"] */
   units?: string[]
+  /** Optional short bio, shown on the featured (head coach) card. */
+  bio?: string
 }
 
 export interface VideoClip {

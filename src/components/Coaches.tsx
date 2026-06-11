@@ -20,7 +20,7 @@ function CoachCard({ coach }: { coach: Coach }) {
         coach.isHead ? "border-wildcat-gold/40 sm:col-span-2 lg:col-span-3" : ""
       }`}
     >
-      <CardContent className="flex items-center gap-4 p-4">
+      <CardContent className="flex items-start gap-4 p-4 sm:items-center">
         <span
           className={`flex shrink-0 items-center justify-center rounded-lg bg-wildcat-charcoal font-display font-bold text-gold-gradient ${
             coach.isHead ? "h-16 w-16 text-2xl" : "h-12 w-12 text-lg"
@@ -32,12 +32,15 @@ function CoachCard({ coach }: { coach: Coach }) {
           {coach.isHead && (
             <Badge className="mb-1 uppercase">Head Coach</Badge>
           )}
-          <p className={`truncate font-semibold ${coach.isHead ? "text-lg" : ""}`}>
+          <p className={`font-semibold ${coach.isHead ? "text-xl" : "truncate"}`}>
             {coach.name}
           </p>
           <p className="text-sm text-muted-foreground">{coach.title}</p>
+          {coach.bio && (
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{coach.bio}</p>
+          )}
         </div>
-        {coach.units && coach.units.length > 0 && (
+        {coach.units && coach.units.length > 0 && !coach.isHead && (
           <div className="hidden flex-wrap justify-end gap-1 sm:flex">
             {coach.units.map((u) => (
               <Badge key={u} variant="secondary">

@@ -53,6 +53,13 @@ export function Hero() {
           </div>
           <div className="h-10 w-px bg-border" />
           <div className="text-center">
+            <p className="font-display text-2xl font-bold tabular-nums text-gold sm:text-3xl">6</p>
+            <p className="text-xs uppercase tracking-wide text-muted-foreground">
+              National Titles
+            </p>
+          </div>
+          <div className="h-10 w-px bg-border" />
+          <div className="text-center">
             <p className="font-display text-2xl font-bold tabular-nums text-gold sm:text-3xl">24</p>
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               State Titles
@@ -60,7 +67,7 @@ export function Hero() {
           </div>
           <div className="hidden h-10 w-px bg-border sm:block" />
           <div className="hidden text-center sm:block">
-            <p className="font-display text-2xl font-bold tabular-nums text-gold sm:text-3xl">900+</p>
+            <p className="font-display text-2xl font-bold tabular-nums text-gold sm:text-3xl">976</p>
             <p className="text-xs uppercase tracking-wide text-muted-foreground">
               All-Time Wins
             </p>
