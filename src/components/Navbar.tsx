@@ -10,6 +10,7 @@ const links = [
   { href: "#scores", label: "Scores" },
   { href: "#tickets", label: "Tickets" },
   { href: "#tdclub", label: "TD Club" },
+  { href: "#feed-the-cats", label: "Feed the Cats" },
   { href: "#supporters", label: "Sponsors" },
   { href: "#video", label: "Video" },
   { href: "#roster", label: "Roster" },
@@ -46,51 +47,48 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-0.5 lg:flex">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="rounded-md px-2.5 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              {l.label}
-            </a>
-          ))}
-          <Button asChild size="sm" className="ml-2">
+        <div className="flex items-center gap-2">
+          <Button asChild size="sm" className="hidden xs:inline-flex">
             <a href="#tickets">Tickets</a>
           </Button>
-        </div>
+          <div className="relative">
+            <button
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-muted"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Toggle menu"
+              aria-expanded={open}
+            >
+              {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
 
-        <button
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md lg:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
-      </nav>
-
-      {open && (
-        <div className="border-t border-border bg-background/95 backdrop-blur-md lg:hidden">
-          <div className="container flex flex-col gap-1 py-3">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
-              >
-                {l.label}
-              </a>
-            ))}
-            <Button asChild size="sm" className="mt-2">
-              <a href="#tickets" onClick={() => setOpen(false)}>
-                Buy Tickets
-              </a>
-            </Button>
+            {open && (
+              <>
+                {/* Click-away backdrop so the menu closes on an outside click. */}
+                <div
+                  className="fixed inset-0 -z-10"
+                  onClick={() => setOpen(false)}
+                  aria-hidden
+                />
+                {/* Anchored directly below the button, right edges aligned. */}
+                <div className="absolute right-0 top-full mt-2 w-56 rounded-xl border border-border bg-background/95 p-2 shadow-xl backdrop-blur-md">
+                  <div className="flex flex-col gap-1">
+                    {links.map((l) => (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        onClick={() => setOpen(false)}
+                        className="rounded-md px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                      >
+                        {l.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
-      )}
+      </nav>
     </header>
   )
 }

@@ -7,6 +7,7 @@ import { VideoMontage } from "@/components/VideoMontage"
 import { Roster } from "@/components/Roster"
 import { Coaches } from "@/components/Coaches"
 import { TdClub } from "@/components/TdClub"
+import { FeedTheCats } from "@/components/FeedTheCats"
 import { Supporters } from "@/components/Supporters"
 import { tdClub } from "@/data"
 import { NewsletterSignup } from "@/components/NewsletterSignup"
@@ -58,11 +59,20 @@ export default function App() {
         </Section>
 
         <Section
+          id="feed-the-cats"
+          eyebrow="Fuel the Program"
+          title="Feed the Cats"
+          description="Investing in the nutrition and well-being of our student-athletes."
+          className="bg-wildcat-charcoal/30"
+        >
+          <FeedTheCats />
+        </Section>
+
+        <Section
           id="supporters"
           eyebrow="Thank You"
           title="Donors & Sponsors"
           description="The businesses and families whose generosity powers Wildcats football."
-          className="bg-wildcat-charcoal/30"
         >
           <Supporters />
         </Section>
@@ -72,6 +82,7 @@ export default function App() {
           eyebrow="The Squad"
           title="Meet the Wildcats"
           description="The players carrying on the Winnersville tradition."
+          className="bg-wildcat-charcoal/30"
         >
           <Roster />
         </Section>
@@ -81,12 +92,11 @@ export default function App() {
           eyebrow="The Sideline"
           title="Coaching Staff"
           description="The leaders steering the program week to week."
-          className="bg-wildcat-charcoal/30"
         >
           <Coaches />
         </Section>
 
-        <Section id="newsletter" title="Join the Wildcats Faithful">
+        <Section id="newsletter" title="Join the Wildcats Faithful" className="bg-wildcat-charcoal/30">
           <div className="mx-auto max-w-3xl">
             <NewsletterSignup />
           </div>

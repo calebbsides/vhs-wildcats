@@ -68,6 +68,20 @@ export const content = {
   },
 
   /* -------------------------------------------------------------------------
+   *  FEED THE CATS
+   *  The "Feed the Cats" outreach blurb. Each "..." in the list is one
+   *  paragraph. Edit the text between the quotes; add or remove paragraphs
+   *  by adding/removing lines (keep the comma at the end of each).
+   * ---------------------------------------------------------------------- */
+  feedTheCats: {
+    paragraphs: [
+      "Feed the Cats is a Valdosta Wildcats Touchdown Club initiative dedicated to supporting the nutritional needs of Wildcat football players throughout the year. The program allows alumni, fans, families, and community partners to directly invest in the student-athlete experience by helping provide meals and support for the team.",
+      "As Valdosta football has evolved, so have the needs of its student-athletes. Feed the Cats was created to give supporters a focused way to contribute to player wellness and development while continuing the Touchdown Club’s long-standing mission of supporting the Wildcat football program.",
+      "Through volunteer efforts, community partnerships, and dedicated sponsorships, Feed the Cats helps ensure that Wildcat players have the resources needed to compete, learn, and represent Valdosta High School at the highest level. Today, Feed the Cats stands as another example of the community’s commitment to the tradition, excellence, and future of Valdosta football.",
+    ],
+  },
+
+  /* -------------------------------------------------------------------------
    *  SCHEDULE & SCORES   ← edit this every week during the season
    *
    *  Each game is one { ... } block. Fields:

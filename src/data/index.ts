@@ -1,6 +1,7 @@
 import { schedule } from "./schedule"
 import type { Game } from "./types"
 
+export { content } from "./content"
 export { site } from "./site"
 export { schedule } from "./schedule"
 export { roster } from "./roster"
