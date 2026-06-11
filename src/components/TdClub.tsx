@@ -2,7 +2,6 @@ import { Check, CalendarClock, Mail, MessageSquare } from "lucide-react"
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { tdClub, type MembershipTier } from "@/data"
 
 function money(n: number) {
@@ -93,10 +92,19 @@ export function TdClub() {
           </p>
 
           <div className="mx-auto mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
-            {payment.paypalEmail && (
+            {(payment.paypalUsername || payment.paypalEmail) && (
               <PaymentRow
                 label="PayPal"
-                value={payment.paypalEmail}
+                value={
+                  payment.paypalUsername
+                    ? `@${payment.paypalUsername}`
+                    : payment.paypalEmail!
+                }
+                href={
+                  payment.paypalUsername
+                    ? `https://www.paypal.me/${payment.paypalUsername}`
+                    : undefined
+                }
                 icon={<span className="font-bold italic text-[#0070ba]">P</span>}
               />
             )}
@@ -122,16 +130,6 @@ export function TdClub() {
               icon={<Mail className="h-4 w-4 text-gold" />}
             />
           </div>
-
-          {payment.paypalUrl && (
-            <div className="mt-6 flex justify-center">
-              <Button asChild size="lg">
-                <a href={payment.paypalUrl} target="_blank" rel="noreferrer">
-                  Join Online
-                </a>
-              </Button>
-            </div>
-          )}
 
           {(helpEmail || helpPhone) && (
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-1 text-sm text-muted-foreground">

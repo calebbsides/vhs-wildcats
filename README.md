@@ -12,8 +12,9 @@ content lives in editable files and the site deploys to a free CDN.
 - **Scoreboard** with recent results and the full season schedule
 - **Video montage** with click-to-play YouTube highlights
 - **Roster** of the current squad
+- **TD Club** membership, parking, and tickets
 - **Newsletter signup** (Mailchimp / Buttondown ready)
-- **Social** cards linking to your X, Instagram, and Facebook
+- **Facebook** link to the team page
 - Black-and-gold Wildcats theme, fully responsive, dark by default
 
 ## Run it locally
@@ -27,46 +28,46 @@ npm run preview  # preview the production build
 
 Requires Node 18+ (built and tested on Node 24).
 
-## Editing content — no code required
+## Editing content — one file, no real coding required
 
-All content is in [`src/data/`](src/data/). Edit a file, save, redeploy.
+**Everything that changes during the season lives in a single file:
+[`src/data/content.ts`](src/data/content.ts).** The schedule, scores, roster,
+coaches, videos, donors, sponsors, ticket link, newsletter link, and TD Club
+membership info are all there, each section clearly commented with what it does
+and how to edit it. Open it and read the instructions at the top.
 
-| What you want to change            | File                         |
-| ---------------------------------- | ---------------------------- |
-| Team name, tagline, social links   | `src/data/site.ts`           |
-| Schedule, scores, venues, tickets  | `src/data/schedule.ts`       |
-| Roster                             | `src/data/roster.ts`         |
-| Highlight videos & social posts    | `src/data/media.ts`          |
+You do **not** edit anything else. After saving your changes, redeploy (see
+below) and the site updates.
 
-### Adding a game result
+### A few quick examples
 
-Find the game in `src/data/schedule.ts` and add a `result` block:
+**Add a game score** — find the game in the `schedule` section and add a
+`result` line to it:
 
 ```ts
-result: {
-  outcome: "W",          // "W" | "L" | "T"
-  wildcatsScore: 28,
-  opponentScore: 21,
-  recap: "Cats hold on late.",
-},
+result: { wildcats: 28, opponent: 21, recap: "Cats hold on late." },
 ```
 
-The record in the hero, the scoreboard, and the "next game" countdown all update
-automatically from the schedule — you never hand-maintain the win/loss record.
+The win/loss record, scoreboard, and "next game" countdown all update
+automatically — you never hand-maintain the record. (`recap` is optional.)
 
-### Kickoff times
+**Add a player** — copy a line in the `roster` section, paste it below, and
+change the number, name, position, and grade.
 
-`kickoff` must be ISO 8601 **with a timezone offset**:
+**Add a sponsor or donor** — add a line to the `sponsors` or `donors` section.
 
-- `-04:00` during Eastern Daylight Time (spring/summer/early fall)
-- `-05:00` during Eastern Standard Time (after the November time change)
+**Change kickoff times / dates** — just type a normal date (`"2026-09-26"`) and
+time (`"8:00 PM"`). The site handles Eastern time and daylight saving for you —
+no technical date formats needed.
 
-Example: `"2025-09-26T19:30:00-04:00"`.
+> Tip: if you make a typo (e.g. forget a comma), the site **won't deploy
+> broken** — the build fails and tells you something's wrong. That's a safety
+> net. Fix the flagged line and redeploy.
 
 ## Newsletter setup
 
-Pick a free provider, then paste its form URL into `newsletterActionUrl` in
-`src/data/site.ts`:
+Pick a free provider, then paste its form URL into the `newsletter` →
+`signupUrl` field in [`src/data/content.ts`](src/data/content.ts):
 
 - **Buttondown** — Settings → Embedding → copy the `embed-subscribe` URL.
 - **Mailchimp** — Audience → Signup forms → Embedded forms → copy the form

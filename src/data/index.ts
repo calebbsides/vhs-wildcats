@@ -6,7 +6,8 @@ export { schedule } from "./schedule"
 export { roster } from "./roster"
 export { coaches } from "./coaches"
 export { tdClub } from "./tdclub"
-export { videos, socialPosts } from "./media"
+export { sponsors, donors } from "./supporters"
+export { videos } from "./media"
 export * from "./types"
 
 /** Games sorted chronologically by kickoff. */

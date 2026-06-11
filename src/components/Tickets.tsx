@@ -9,8 +9,6 @@ import { downloadIcs } from "@/lib/ics"
 function GameTicketRow({ game }: { game: Game }) {
   const date = new Date(game.kickoff)
   const isAway = game.location === "away"
-  // Per-game link wins; otherwise fall back to the team's main GoFan store.
-  const link = game.ticketsUrl || site.ticketsUrl
 
   return (
     <Card>
@@ -46,23 +44,8 @@ function GameTicketRow({ game }: { game: Game }) {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 sm:shrink-0">
-          {game.isScrimmage ? (
-            <Badge variant="secondary" className="self-start sm:self-center">
-              Scrimmage
-            </Badge>
-          ) : link ? (
-            <Button asChild size="sm" className="flex-1 sm:flex-none">
-              <a href={link} target="_blank" rel="noreferrer">
-                <Ticket className="h-4 w-4" />
-                Buy Tickets
-              </a>
-            </Button>
-          ) : (
-            <Badge variant="outline" className="self-center">
-              Tickets soon
-            </Badge>
-          )}
+        <div className="flex items-center gap-2 self-start sm:shrink-0 sm:self-center">
+          {game.isScrimmage && <Badge variant="secondary">Scrimmage</Badge>}
           <Button
             variant="ghost"
             size="icon"

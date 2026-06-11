@@ -7,7 +7,7 @@ import { VideoMontage } from "@/components/VideoMontage"
 import { Roster } from "@/components/Roster"
 import { Coaches } from "@/components/Coaches"
 import { TdClub } from "@/components/TdClub"
-import { SocialFeed } from "@/components/SocialFeed"
+import { Supporters } from "@/components/Supporters"
 import { tdClub } from "@/data"
 import { NewsletterSignup } from "@/components/NewsletterSignup"
 import { Footer } from "@/components/Footer"
@@ -58,11 +58,20 @@ export default function App() {
         </Section>
 
         <Section
+          id="supporters"
+          eyebrow="Thank You"
+          title="Donors & Sponsors"
+          description="The businesses and families whose generosity powers Wildcats football."
+          className="bg-wildcat-charcoal/30"
+        >
+          <Supporters />
+        </Section>
+
+        <Section
           id="roster"
           eyebrow="The Squad"
           title="Meet the Wildcats"
           description="The players carrying on the Winnersville tradition."
-          className="bg-wildcat-charcoal/30"
         >
           <Roster />
         </Section>
@@ -72,21 +81,12 @@ export default function App() {
           eyebrow="The Sideline"
           title="Coaching Staff"
           description="The leaders steering the program week to week."
+          className="bg-wildcat-charcoal/30"
         >
           <Coaches />
         </Section>
 
-        <Section
-          id="social"
-          eyebrow="Stay Connected"
-          title="From the Pride"
-          description="The latest from our official channels."
-          className="bg-wildcat-charcoal/30"
-        >
-          <SocialFeed />
-        </Section>
-
-        <Section id="newsletter" title="Join the Wildcats Faithful" className="bg-wildcat-charcoal/30">
+        <Section id="newsletter" title="Join the Wildcats Faithful">
           <div className="mx-auto max-w-3xl">
             <NewsletterSignup />
           </div>

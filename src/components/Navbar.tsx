@@ -10,10 +10,10 @@ const links = [
   { href: "#scores", label: "Scores" },
   { href: "#tickets", label: "Tickets" },
   { href: "#tdclub", label: "TD Club" },
+  { href: "#supporters", label: "Sponsors" },
   { href: "#video", label: "Video" },
   { href: "#roster", label: "Roster" },
   { href: "#coaches", label: "Coaches" },
-  { href: "#social", label: "Social" },
 ]
 
 export function Navbar() {

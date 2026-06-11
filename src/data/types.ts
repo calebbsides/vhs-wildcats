@@ -63,15 +63,21 @@ export interface VideoClip {
   date?: string
 }
 
-export interface SocialPost {
-  id: string
-  platform: "x" | "instagram" | "facebook"
-  author: string
-  handle: string
-  body: string
-  /** Human date label, e.g. "2 days ago" */
-  date: string
-  url: string
+export interface Sponsor {
+  /** Company / business name. */
+  name: string
+  /**
+   * Path to a logo image in /public, e.g. "/sponsors/acme.png". If omitted,
+   * the company name is shown as styled text instead of a logo.
+   */
+  logo?: string
+  /** Optional website to link the logo/name to. */
+  url?: string
+}
+
+export interface Donor {
+  /** Individual or family name, e.g. "The Smith Family". */
+  name: string
 }
 
 export interface MembershipTier {
@@ -99,6 +105,8 @@ export interface TdClubConfig {
   tiers: MembershipTier[]
   payment: {
     paypalEmail?: string
+    /** PayPal.Me username (without the @), e.g. "vhswildcatfootball". */
+    paypalUsername?: string
     cashApp?: string
     venmo?: string
     /** Direct PayPal join link if available. */
@@ -119,10 +127,7 @@ export interface SiteConfig {
   season: string
   record: { wins: number; losses: number; ties: number }
   social: {
-    x?: string
-    instagram?: string
     facebook?: string
-    youtube?: string
   }
   contactEmail: string
   /** Newsletter provider embed/action URL — see NewsletterSignup component */

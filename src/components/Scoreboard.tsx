@@ -55,30 +55,32 @@ function ScheduleRow({ game }: { game: Game }) {
   return (
     <Card>
       <CardContent className="flex items-center gap-4 p-4">
-        <div className="w-14 shrink-0 text-center">
+        <div className="w-12 shrink-0 text-center">
           <p className="font-display text-lg font-bold leading-none">{date.getDate()}</p>
           <p className="text-xs uppercase text-muted-foreground">
             {date.toLocaleDateString("en-US", { month: "short" })}
           </p>
         </div>
         <div className="min-w-0 flex-1">
-          <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
-            <p className="font-semibold">
-              {isAway ? "at " : "vs "}
-              {game.opponent}
-            </p>
-            {game.note && <Badge variant="secondary">{game.note}</Badge>}
-          </div>
-          <p className="text-xs text-muted-foreground">
+          <p className="truncate font-semibold">
+            {isAway ? "at " : "vs "}
+            {game.opponent}
+          </p>
+          <p className="truncate text-xs text-muted-foreground">
             {date.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit" })} · {game.venue}
           </p>
+          {game.note && (
+            <Badge variant="secondary" className="mt-1">
+              {game.note}
+            </Badge>
+          )}
         </div>
         {game.result ? (
           <Badge variant={game.result.outcome === "W" ? "win" : game.result.outcome === "L" ? "loss" : "tie"}>
             {game.result.outcome} {game.result.wildcatsScore}–{game.result.opponentScore}
           </Badge>
         ) : (
-          <div className="flex items-center gap-2">
+          <div className="flex shrink-0 flex-col items-end gap-1">
             <Badge variant="outline">Upcoming</Badge>
             <Button
               variant="ghost"

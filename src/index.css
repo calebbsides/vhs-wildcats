@@ -30,19 +30,19 @@
     --foreground: 0 0% 96%;
     --card: 0 0% 8%;
     --card-foreground: 0 0% 96%;
-    --primary: 48 92% 50%;
+    --primary: 45 75% 52%;
     --primary-foreground: 0 0% 4%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 96%;
     --muted: 0 0% 12%;
     --muted-foreground: 0 0% 60%;
-    --accent: 48 92% 50%;
+    --accent: 45 75% 52%;
     --accent-foreground: 0 0% 4%;
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 16%;
     --input: 0 0% 18%;
-    --ring: 48 92% 50%;
+    --ring: 45 75% 52%;
   }
 }
 
@@ -58,10 +58,10 @@
   body {
     @apply bg-background text-foreground font-sans antialiased;
     background-image:
-      radial-gradient(circle at 15% 10%, hsl(48 92% 50% / 0.08), transparent 40%),
-      radial-gradient(circle at 85% 0%, hsl(48 92% 50% / 0.05), transparent 35%);
+      radial-gradient(circle at 15% 10%, hsl(45 75% 52% / 0.06), transparent 40%),
+      radial-gradient(circle at 85% 0%, hsl(45 75% 52% / 0.04), transparent 35%);
     /* Pleasant tap highlight instead of the default blue flash on mobile. */
-    -webkit-tap-highlight-color: hsl(48 92% 50% / 0.15);
+    -webkit-tap-highlight-color: hsl(45 75% 52% / 0.12);
   }
   /* fixed attachment is janky on mobile Safari — only enable it on larger screens. */
   @media (min-width: 768px) {
@@ -85,12 +85,23 @@
     background-size: 48px 48px;
   }
   .gold-gradient {
-    background: linear-gradient(135deg, #ffd21a 0%, #e8b80a 100%);
+    /* Wide highlight→deep-amber range so it reads as metallic gold, not a flat
+       yellow slab — especially on small/high-DPI mobile screens. */
+    background: linear-gradient(135deg, #f6cf3f 0%, #d4a017 55%, #a8780c 100%);
   }
   .text-gold-gradient {
-    background: linear-gradient(135deg, #ffd21a 0%, #e8b80a 100%);
+    /* Solid fallback first: if background-clip:text fails on a mobile browser,
+       text stays readable gold instead of rendering as a yellow block. */
+    color: #e0ad1f;
+    background: linear-gradient(135deg, #f6cf3f 0%, #c8951a 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  @supports not ((-webkit-background-clip: text) or (background-clip: text)) {
+    .text-gold-gradient {
+      background: none;
+      -webkit-text-fill-color: currentColor;
+    }
   }
 }
