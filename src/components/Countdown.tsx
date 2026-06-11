@@ -1,10 +1,9 @@
-import { CalendarDays, CalendarPlus, MapPin, Ticket } from "lucide-react"
+import { CalendarDays, MapPin, Radio, Ticket } from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { getNextGame } from "@/data"
+import { content, getNextGame } from "@/data"
 import { useCountdown } from "@/hooks/useCountdown"
-import { downloadIcs } from "@/lib/ics"
 
 function pad(n: number) {
   return n.toString().padStart(2, "0")
@@ -28,6 +27,7 @@ function Unit({ value, label }: { value: number; label: string }) {
 export function Countdown() {
   const game = getNextGame()
   const time = useCountdown(game?.kickoff)
+  const watchLiveUrl = content.watchLiveUrl
 
   if (!game || !time) {
     return (
@@ -112,14 +112,14 @@ export function Countdown() {
               </a>
             </Button>
           )}
-          <Button
-            variant={game.ticketsUrl ? "outline" : "default"}
-            size="lg"
-            onClick={() => downloadIcs([game], `wildcats-vs-${game.id}`)}
-          >
-            <CalendarPlus className="h-5 w-5" />
-            Add to Calendar
-          </Button>
+          {watchLiveUrl && (
+            <Button asChild variant={game.ticketsUrl ? "outline" : "default"} size="lg">
+              <a href={watchLiveUrl} target="_blank" rel="noreferrer">
+                <Radio className="h-5 w-5" />
+                Watch Live
+              </a>
+            </Button>
+          )}
         </div>
       </div>
     </div>

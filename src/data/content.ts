@@ -55,6 +55,11 @@ export const content = {
     gofanUrl: "https://gofan.co/app/school/GA7328",
   },
 
+  // Live-stream link (NFHS Network). Shows a "Watch Live" button on the
+  // next-game countdown. Leave "" to hide that button.
+  watchLiveUrl:
+    "https://www.nfhsnetwork.com/schools/valdosta-high-school-valdosta-ga/football",
+
   /* -------------------------------------------------------------------------
    *  NEWSLETTER
    *  Where email sign-ups are sent. Leave "" until you have a provider; the
