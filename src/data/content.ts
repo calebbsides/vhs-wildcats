@@ -41,7 +41,7 @@ export const content = {
     // The season year shown around the site, e.g. "2026".
     season: "2026",
     // Email people can use to contact the program.
-    contactEmail: "hlpye@outlook.com",
+    contactEmail: "valdostatouchdownclub@gmail.com",
     // The team's official Facebook page (the only social account we link to).
     facebookUrl: "https://www.facebook.com/24VHSFootball",
   },
@@ -394,8 +394,8 @@ export const content = {
       venmo: "@ValdostaTouchdown-Club",
     },
     mailingAddress: "P.O. Box 794, Valdosta, GA 31603",
-    helpEmail: "hlpye@outlook.com",
-    helpPhone: "229-343-8907",
+    helpEmail: "valdostatouchdownclub@gmail.com",
+    helpPhone: "",
     paymentInstructions:
       "Submit payment and include your NAME and the ADDRESS to mail your passes to in the notes.",
   },
