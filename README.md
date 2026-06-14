@@ -13,7 +13,7 @@ content lives in editable files and the site deploys to a free CDN.
 - **Video montage** with click-to-play YouTube highlights
 - **Roster** of the current squad
 - **TD Club** membership, parking, and tickets
-- **Newsletter signup** (Mailchimp / Buttondown ready)
+- **Contact form** that emails the team directly
 - **Facebook** link to the team page
 - Black-and-gold Wildcats theme, fully responsive, dark by default
 
@@ -32,7 +32,7 @@ Requires Node 18+ (built and tested on Node 24).
 
 **Everything that changes during the season lives in a single file:
 [`src/data/content.ts`](src/data/content.ts).** The schedule, scores, roster,
-coaches, videos, donors, sponsors, ticket link, newsletter link, and TD Club
+coaches, videos, donors, sponsors, ticket link, and TD Club
 membership info are all there, each section clearly commented with what it does
 and how to edit it. Open it and read the instructions at the top.
 
@@ -64,17 +64,18 @@ no technical date formats needed.
 > broken** — the build fails and tells you something's wrong. That's a safety
 > net. Fix the flagged line and redeploy.
 
-## Newsletter setup
+## Contact form
 
-Pick a free provider, then paste its form URL into the `newsletter` →
-`signupUrl` field in [`src/data/content.ts`](src/data/content.ts):
+The Contact section uses [Web3Forms](https://web3forms.com) (free) to deliver
+messages straight to the team's inbox — no server required. To turn it on:
 
-- **Buttondown** — Settings → Embedding → copy the `embed-subscribe` URL.
-- **Mailchimp** — Audience → Signup forms → Embedded forms → copy the form
-  `action` URL.
+1. Go to [web3forms.com](https://web3forms.com), enter your `contactEmail`, and
+   click **Create Access Key**. They email you a key.
+2. Paste the key into the `contact` → `web3formsAccessKey` field in
+   [`src/data/content.ts`](src/data/content.ts) and redeploy.
 
-The signup form sends both `email` and `EMAIL` fields so it works with either.
-Until a URL is set, the form shows a friendly "email us to subscribe" fallback.
+Until a key is set, the form falls back to opening the visitor's email client
+with a pre-filled message to `contactEmail`.
 
 ## Deploying to Vercel (free)
 

@@ -47,6 +47,21 @@ export const content = {
   },
 
   /* -------------------------------------------------------------------------
+   *  CONTACT FORM
+   *  The "Contact Us" section uses Web3Forms (free) to deliver messages to the
+   *  team's inbox — no server required. To turn it on:
+   *    1. Go to https://web3forms.com, enter the contactEmail above, and click
+   *       "Create Access Key". They email you a key (a long code like
+   *       "a1b2c3d4-...").
+   *    2. Paste that key between the quotes below and redeploy.
+   *  Leave "" until you have a key — the form then falls back to opening the
+   *  visitor's email app instead.
+   * ---------------------------------------------------------------------- */
+  contact: {
+    web3formsAccessKey: "",
+  },
+
+  /* -------------------------------------------------------------------------
    *  TICKETS
    *  The GoFan link where fans buy tickets to home games.
    * ---------------------------------------------------------------------- */
@@ -59,18 +74,6 @@ export const content = {
   // next-game countdown. Leave "" to hide that button.
   watchLiveUrl:
     "https://www.nfhsnetwork.com/schools/valdosta-high-school-valdosta-ga/football",
-
-  /* -------------------------------------------------------------------------
-   *  NEWSLETTER
-   *  Where email sign-ups are sent. Leave "" until you have a provider; the
-   *  form then shows a friendly "email us instead" message.
-   * ---------------------------------------------------------------------- */
-  newsletter: {
-    // Mailchimp or Buttondown form action URL. Examples:
-    //   Buttondown: "https://buttondown.email/api/emails/embed-subscribe/your-handle"
-    //   Mailchimp:  "https://yourlist.us21.list-manage.com/subscribe/post?u=XXXX&id=YYYY"
-    signupUrl: "",
-  },
 
   /* -------------------------------------------------------------------------
    *  FEED THE CATS

@@ -14,6 +14,6 @@ export const site: SiteConfig = {
     facebook: content.team.facebookUrl,
   },
   contactEmail: content.team.contactEmail,
-  newsletterActionUrl: content.newsletter.signupUrl,
+  web3formsAccessKey: content.contact.web3formsAccessKey,
   ticketsUrl: content.tickets.gofanUrl,
 }

@@ -130,8 +130,11 @@ export interface SiteConfig {
     facebook?: string
   }
   contactEmail: string
-  /** Newsletter provider embed/action URL — see NewsletterSignup component */
-  newsletterActionUrl: string
+  /**
+   * Web3Forms access key used by the contact form to deliver messages without a
+   * backend. Leave "" to fall back to a mailto: handoff. See ContactForm.
+   */
+  web3formsAccessKey: string
   /**
    * The team's main GoFan ticket store URL (sells tickets for all home games).
    * Leave "" until you have the link — the Tickets section shows a "coming soon"

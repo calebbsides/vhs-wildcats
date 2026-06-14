@@ -10,7 +10,7 @@ import { TdClub } from "@/components/TdClub"
 import { FeedTheCats } from "@/components/FeedTheCats"
 import { Supporters } from "@/components/Supporters"
 import { tdClub } from "@/data"
-import { NewsletterSignup } from "@/components/NewsletterSignup"
+import { ContactForm } from "@/components/ContactForm"
 import { Footer } from "@/components/Footer"
 
 export default function App() {
@@ -96,9 +96,9 @@ export default function App() {
           <Coaches />
         </Section>
 
-        <Section id="newsletter" title="Join the Wildcats Faithful" className="bg-wildcat-charcoal/30">
+        <Section id="contact" title="Contact Us" className="bg-wildcat-charcoal/30">
           <div className="mx-auto max-w-3xl">
-            <NewsletterSignup />
+            <ContactForm />
           </div>
         </Section>
       </main>
