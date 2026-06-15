@@ -10,6 +10,7 @@ const links = [
   { href: "#scores", label: "Scores" },
   { href: "#tickets", label: "Tickets" },
   { href: "#tdclub", label: "TD Club" },
+  { href: "#board", label: "Board" },
   { href: "#feed-the-cats", label: "Feed the Cats" },
   { href: "#supporters", label: "Sponsors" },
   { href: "#video", label: "Video" },

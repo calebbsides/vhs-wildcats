@@ -233,7 +233,6 @@ export const content = {
    *  ⚠️ The names below are PLACEHOLDERS — replace them with the real roster.
    * ---------------------------------------------------------------------- */
   roster: [
- 
   //   { number: 3, name: "Jaylen Carter", position: "QB", grade: "JR", heightIn: 74, weightLb: 195 },
   //   { number: 7, name: "Deon Hughes", position: "CB", grade: "SR", heightIn: 71, weightLb: 175 },
   //   { number: 11, name: "Tyree Sims", position: "WR", grade: "SO", heightIn: 70, weightLb: 165 },
@@ -245,7 +244,7 @@ export const content = {
   //   { number: 66, name: "Cam Roberts", position: "OL", grade: "JR", heightIn: 75, weightLb: 295 },
   //   { number: 72, name: "Devin Pratt", position: "DL", grade: "SR", heightIn: 75, weightLb: 275 },
   //   { number: 88, name: "Xavier Greene", position: "TE", grade: "SO", heightIn: 77, weightLb: 230 },
-  // ],
+  ],
 
   /* -------------------------------------------------------------------------
    *  COACHES
@@ -345,6 +344,23 @@ export const content = {
    * ---------------------------------------------------------------------- */
   tdClub: {
     deadline: "July 1",
+
+    /* -----------------------------------------------------------------------
+     *  BOARD MEMBERS
+     *  The Touchdown Club's board / officers. One block per member:
+     *    name  : member's name.                                  (required)
+     *    title : role, e.g. "President", "Treasurer".            (required)
+     *    email : optional contact email shown on the card.
+     *
+     *  ⚠️ The entries below are PLACEHOLDERS — replace with the real board.
+     * -------------------------------------------------------------------- */
+    board: [
+      { name: "Board Member", title: "President" },
+      { name: "Board Member", title: "Vice President" },
+      { name: "Board Member", title: "Secretary" },
+      { name: "Board Member", title: "Treasurer" },
+    ],
+
     tiers: [
       {
         name: "Family Membership",

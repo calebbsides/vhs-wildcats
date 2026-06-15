@@ -54,6 +54,14 @@ export interface Coach {
   bio?: string
 }
 
+export interface BoardMember {
+  name: string
+  /** Role on the board, e.g. "President", "Treasurer". */
+  title: string
+  /** Optional contact email shown on the card. */
+  email?: string
+}
+
 export interface VideoClip {
   id: string
   title: string

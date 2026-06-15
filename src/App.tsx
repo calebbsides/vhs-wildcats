@@ -7,6 +7,7 @@ import { VideoMontage } from "@/components/VideoMontage"
 import { Roster } from "@/components/Roster"
 import { Coaches } from "@/components/Coaches"
 import { TdClub } from "@/components/TdClub"
+import { BoardMembers } from "@/components/BoardMembers"
 import { FeedTheCats } from "@/components/FeedTheCats"
 import { Supporters } from "@/components/Supporters"
 import { tdClub } from "@/data"
@@ -59,11 +60,20 @@ export default function App() {
         </Section>
 
         <Section
+          id="board"
+          eyebrow="Touchdown Club"
+          title="Board Members"
+          description="The volunteers who lead the Valdosta Wildcats Touchdown Club."
+          className="bg-wildcat-charcoal/30"
+        >
+          <BoardMembers />
+        </Section>
+
+        <Section
           id="feed-the-cats"
           eyebrow="Fuel the Program"
           title="Feed the Cats"
           description="Investing in the nutrition and well-being of our student-athletes."
-          className="bg-wildcat-charcoal/30"
         >
           <FeedTheCats />
         </Section>

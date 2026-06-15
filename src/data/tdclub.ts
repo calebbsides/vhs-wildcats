@@ -1,5 +1,5 @@
 import { content } from "./content"
-import type { MembershipTier, TdClubConfig } from "./types"
+import type { BoardMember, MembershipTier, TdClubConfig } from "./types"
 
 function slugify(name: string): string {
   return name
@@ -44,3 +44,13 @@ export const tdClub: TdClubConfig = {
   helpPhone: content.tdClub.helpPhone,
   paymentInstructions: content.tdClub.paymentInstructions,
 }
+
+/** The TD Club board members from content.ts. */
+export const board: BoardMember[] = content.tdClub.board.map((raw): BoardMember => {
+  const m = raw as { name: string; title: string; email?: string }
+  return {
+    name: m.name,
+    title: m.title,
+    ...(m.email ? { email: m.email } : {}),
+  }
+})
