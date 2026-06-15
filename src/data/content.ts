@@ -233,7 +233,7 @@ export const content = {
    *  ⚠️ The names below are PLACEHOLDERS — replace them with the real roster.
    * ---------------------------------------------------------------------- */
   roster: [
-  //   { number: 1, name: "Marcus Bell", position: "WR", grade: "SR", heightIn: 72, weightLb: 180 },
+ 
   //   { number: 3, name: "Jaylen Carter", position: "QB", grade: "JR", heightIn: 74, weightLb: 195 },
   //   { number: 7, name: "Deon Hughes", position: "CB", grade: "SR", heightIn: 71, weightLb: 175 },
   //   { number: 11, name: "Tyree Sims", position: "WR", grade: "SO", heightIn: 70, weightLb: 165 },
