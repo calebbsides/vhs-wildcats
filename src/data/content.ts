@@ -288,10 +288,10 @@ export const content = {
    *  ⚠️ The youtubeId below is a placeholder — replace with real video codes.
    * ---------------------------------------------------------------------- */
   videos: [
-    { title: "2026 Season Hype", youtubeId: "dQw4w9WgXcQ", date: "Aug 2026" },
-    { title: "Winnersville Classic Highlights", youtubeId: "dQw4w9WgXcQ", date: "Aug 2026" },
-    { title: "Friday Night Under the Lights", youtubeId: "dQw4w9WgXcQ", date: "Sep 2026" },
-    { title: "Defense Sets the Tone", youtubeId: "dQw4w9WgXcQ", date: "Sep 2026" },
+    { title: "Helmets", youtubeId: "McgeO63fWC0", date: "June 2026" },
+    { title: "Playoff", youtubeId: "P6tY_iVZ0Pk", date: "June 2026" },
+    { title: "Our Standard", youtubeId: "UVkthyDByNY", date: "June 2026" },
+    { title: "Week 2", youtubeId: "XyNhVi-Uhtw", date: "June 2026" },
   ],
 
   /* -------------------------------------------------------------------------

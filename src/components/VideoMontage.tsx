@@ -1,78 +1,93 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { ChevronLeft, ChevronRight, Play } from "lucide-react"
 
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog"
 import { videos, type VideoClip } from "@/data"
 
 function thumb(youtubeId: string) {
   return `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`
 }
 
-function VideoCard({ clip, featured = false }: { clip: VideoClip; featured?: boolean }) {
-  const [open, setOpen] = useState(false)
+function ThumbCard({
+  clip,
+  active,
+  onSelect,
+}: {
+  clip: VideoClip
+  active: boolean
+  onSelect: () => void
+}) {
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
-      <DialogTrigger asChild>
-        <button
-          className={`group relative w-full overflow-hidden rounded-xl border border-border bg-card text-left transition-all hover:border-wildcat-gold/50 ${
-            featured ? "aspect-video" : "aspect-video"
-          }`}
-        >
-          <img
-            src={thumb(clip.youtubeId)}
-            alt={clip.title}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full object-cover opacity-70 transition group-hover:scale-105 group-hover:opacity-90"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <span className="flex h-14 w-14 items-center justify-center rounded-full gold-gradient shadow-lg transition group-hover:scale-110">
-              <Play className="h-6 w-6 translate-x-0.5 fill-wildcat-black text-wildcat-black" />
-            </span>
-          </div>
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            {clip.date && (
-              <span className="text-xs font-semibold uppercase tracking-wide text-gold">
-                {clip.date}
-              </span>
-            )}
-            <h3 className={`font-bold ${featured ? "text-xl sm:text-2xl" : "text-base"}`}>
-              {clip.title}
-            </h3>
-          </div>
-        </button>
-      </DialogTrigger>
-      <DialogContent className="max-w-3xl p-0">
-        <DialogHeader className="p-4 pb-0">
-          <DialogTitle>{clip.title}</DialogTitle>
-        </DialogHeader>
-        <div className="aspect-video w-full p-4 pt-2">
-          {open && (
-            <iframe
-              className="h-full w-full rounded-lg"
-              src={`https://www.youtube.com/embed/${clip.youtubeId}?autoplay=1`}
-              title={clip.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          )}
-        </div>
-      </DialogContent>
-    </Dialog>
+    <button
+      onClick={onSelect}
+      className={`group relative w-full overflow-hidden rounded-xl border bg-card text-left transition-all aspect-video ${
+        active
+          ? "border-wildcat-gold ring-2 ring-wildcat-gold/40"
+          : "border-border hover:border-wildcat-gold/50"
+      }`}
+    >
+      <img
+        src={thumb(clip.youtubeId)}
+        alt={clip.title}
+        loading="lazy"
+        className="absolute inset-0 h-full w-full object-cover opacity-70 transition group-hover:scale-105 group-hover:opacity-90"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full gold-gradient shadow-lg transition group-hover:scale-110">
+          <Play className="h-5 w-5 translate-x-0.5 fill-wildcat-black text-wildcat-black" />
+        </span>
+      </div>
+      <div className="absolute bottom-0 left-0 right-0 p-4">
+        {clip.date && (
+          <span className="text-xs font-semibold uppercase tracking-wide text-gold">
+            {clip.date}
+          </span>
+        )}
+        <h3 className="text-base font-bold">{clip.title}</h3>
+      </div>
+    </button>
   )
 }
 
 export function VideoMontage() {
   const scroller = useRef<HTMLDivElement>(null)
+  const playerRef = useRef<HTMLDivElement>(null)
+  const [activeId, setActiveId] = useState<string | null>(null)
+  const [visible, setVisible] = useState(false)
+
+  // Only load/autoplay the player once it has scrolled into view.
+  useEffect(() => {
+    const el = playerRef.current
+    if (!el || typeof IntersectionObserver === "undefined") {
+      setVisible(true)
+      return
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.4 },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [])
 
   if (videos.length === 0) return null
-  const [featured, ...rest] = videos
+
+  // The featured (top) video defaults to the first clip and autoplays muted.
+  // Once a viewer clicks any clip, that one takes over the main player with sound.
+  const active = videos.find((v) => v.id === activeId) ?? videos[0]
+  const userSelected = activeId !== null
+  const rest = videos.filter((v) => v.id !== active.id)
+
+  // autoplay=1 always; mute the initial auto-load so browsers allow it, but
+  // play with sound once the viewer has actively chosen a clip.
+  const embedSrc =
+    `https://www.youtube.com/embed/${active.youtubeId}` +
+    `?autoplay=1&mute=${userSelected ? 0 : 1}&rel=0`
 
   function scrollBy(direction: 1 | -1) {
     const el = scroller.current
@@ -83,9 +98,36 @@ export function VideoMontage() {
 
   return (
     <div className="space-y-8">
-      {/* Featured video — large and centered */}
-      <div className="mx-auto max-w-4xl">
-        <VideoCard clip={featured} featured />
+      {/* Main player — autoplays, swaps when a thumbnail is clicked */}
+      <div ref={playerRef} className="mx-auto max-w-4xl">
+        <div className="overflow-hidden rounded-xl border border-border bg-card">
+          <div className="relative aspect-video w-full">
+            {visible ? (
+              <iframe
+                key={active.id + String(userSelected)}
+                className="h-full w-full"
+                src={embedSrc}
+                title={active.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            ) : (
+              <img
+                src={thumb(active.youtubeId)}
+                alt={active.title}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            )}
+          </div>
+          <div className="p-4">
+            {active.date && (
+              <span className="text-xs font-semibold uppercase tracking-wide text-gold">
+                {active.date}
+              </span>
+            )}
+            <h3 className="text-xl font-bold sm:text-2xl">{active.title}</h3>
+          </div>
+        </div>
       </div>
 
       {rest.length > 0 && (
@@ -123,7 +165,14 @@ export function VideoMontage() {
                 key={clip.id}
                 className="w-[80%] shrink-0 snap-start sm:w-[45%] lg:w-[30%]"
               >
-                <VideoCard clip={clip} />
+                <ThumbCard
+                  clip={clip}
+                  active={false}
+                  onSelect={() => {
+                    setActiveId(clip.id)
+                    setVisible(true)
+                  }}
+                />
               </div>
             ))}
           </div>
