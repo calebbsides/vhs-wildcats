@@ -58,7 +58,7 @@ export const content = {
    *  visitor's email app instead.
    * ---------------------------------------------------------------------- */
   contact: {
-    web3formsAccessKey: "",
+    web3formsAccessKey: "88d798cc-74e9-4cf1-818c-c9d06e24236b",
   },
 
   /* -------------------------------------------------------------------------
