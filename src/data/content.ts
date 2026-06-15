@@ -245,7 +245,7 @@ export const content = {
   //   { number: 66, name: "Cam Roberts", position: "OL", grade: "JR", heightIn: 75, weightLb: 295 },
   //   { number: 72, name: "Devin Pratt", position: "DL", grade: "SR", heightIn: 75, weightLb: 275 },
   //   { number: 88, name: "Xavier Greene", position: "TE", grade: "SO", heightIn: 77, weightLb: 230 },
-  // ],
+  ],
 
   /* -------------------------------------------------------------------------
    *  COACHES
