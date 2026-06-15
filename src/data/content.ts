@@ -233,19 +233,19 @@ export const content = {
    *  ⚠️ The names below are PLACEHOLDERS — replace them with the real roster.
    * ---------------------------------------------------------------------- */
   roster: [
-    { number: 1, name: "Marcus Bell", position: "WR", grade: "SR", heightIn: 72, weightLb: 180 },
-    { number: 3, name: "Jaylen Carter", position: "QB", grade: "JR", heightIn: 74, weightLb: 195 },
-    { number: 7, name: "Deon Hughes", position: "CB", grade: "SR", heightIn: 71, weightLb: 175 },
-    { number: 11, name: "Tyree Sims", position: "WR", grade: "SO", heightIn: 70, weightLb: 165 },
-    { number: 21, name: "Andre Wallace", position: "RB", grade: "SR", heightIn: 70, weightLb: 205 },
-    { number: 24, name: "Chris Daniels", position: "S", grade: "JR", heightIn: 72, weightLb: 190 },
-    { number: 32, name: "Malik Turner", position: "LB", grade: "SR", heightIn: 73, weightLb: 220 },
-    { number: 44, name: "Brandon Lee", position: "LB", grade: "JR", heightIn: 72, weightLb: 225 },
-    { number: 55, name: "Isaiah Ford", position: "OL", grade: "SR", heightIn: 76, weightLb: 285 },
-    { number: 66, name: "Cam Roberts", position: "OL", grade: "JR", heightIn: 75, weightLb: 295 },
-    { number: 72, name: "Devin Pratt", position: "DL", grade: "SR", heightIn: 75, weightLb: 275 },
-    { number: 88, name: "Xavier Greene", position: "TE", grade: "SO", heightIn: 77, weightLb: 230 },
-  ],
+  //   { number: 1, name: "Marcus Bell", position: "WR", grade: "SR", heightIn: 72, weightLb: 180 },
+  //   { number: 3, name: "Jaylen Carter", position: "QB", grade: "JR", heightIn: 74, weightLb: 195 },
+  //   { number: 7, name: "Deon Hughes", position: "CB", grade: "SR", heightIn: 71, weightLb: 175 },
+  //   { number: 11, name: "Tyree Sims", position: "WR", grade: "SO", heightIn: 70, weightLb: 165 },
+  //   { number: 21, name: "Andre Wallace", position: "RB", grade: "SR", heightIn: 70, weightLb: 205 },
+  //   { number: 24, name: "Chris Daniels", position: "S", grade: "JR", heightIn: 72, weightLb: 190 },
+  //   { number: 32, name: "Malik Turner", position: "LB", grade: "SR", heightIn: 73, weightLb: 220 },
+  //   { number: 44, name: "Brandon Lee", position: "LB", grade: "JR", heightIn: 72, weightLb: 225 },
+  //   { number: 55, name: "Isaiah Ford", position: "OL", grade: "SR", heightIn: 76, weightLb: 285 },
+  //   { number: 66, name: "Cam Roberts", position: "OL", grade: "JR", heightIn: 75, weightLb: 295 },
+  //   { number: 72, name: "Devin Pratt", position: "DL", grade: "SR", heightIn: 75, weightLb: 275 },
+  //   { number: 88, name: "Xavier Greene", position: "TE", grade: "SO", heightIn: 77, weightLb: 230 },
+  // ],
 
   /* -------------------------------------------------------------------------
    *  COACHES
