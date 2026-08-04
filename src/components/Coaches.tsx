@@ -14,42 +14,88 @@ function initials(name: string) {
 }
 
 function CoachCard({ coach }: { coach: Coach }) {
-  return (
-    <Card
-      className={`group overflow-hidden transition-all hover:border-wildcat-gold/50 ${
-        coach.isHead ? "border-wildcat-gold/40 sm:col-span-2 lg:col-span-3" : ""
-      }`}
-    >
-      <CardContent className="flex items-start gap-4 p-4 sm:items-center">
-        <span
-          className={`flex shrink-0 items-center justify-center rounded-lg bg-wildcat-charcoal font-display font-bold text-gold-gradient ${
-            coach.isHead ? "h-16 w-16 text-2xl" : "h-12 w-12 text-lg"
-          }`}
-        >
-          {initials(coach.name)}
-        </span>
-        <div className="min-w-0 flex-1">
-          {coach.isHead && (
-            <Badge className="mb-1 uppercase">Head Coach</Badge>
-          )}
-          <p className={`font-semibold ${coach.isHead ? "text-xl" : "truncate"}`}>
-            {coach.name}
-          </p>
-          <p className="text-sm text-muted-foreground">{coach.title}</p>
-          {coach.bio && (
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{coach.bio}</p>
-          )}
-        </div>
-        {coach.units && coach.units.length > 0 && !coach.isHead && (
-          <div className="hidden flex-wrap justify-end gap-1 sm:flex">
-            {coach.units.map((u) => (
-              <Badge key={u} variant="secondary">
-                {u}
-              </Badge>
-            ))}
+  const hasPhoto = !!coach.photo
+
+  if (coach.isHead && hasPhoto) {
+    return (
+      <Card className="group overflow-hidden transition-all hover:border-wildcat-gold/50 sm:col-span-2 lg:col-span-3">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-stretch">
+          <div className="h-80 w-full overflow-hidden bg-wildcat-charcoal/50 lg:h-auto lg:w-1/3">
+            <img
+              src={coach.photo}
+              alt={coach.name}
+              className="h-full w-full object-contain"
+            />
           </div>
-        )}
-      </CardContent>
+          <CardContent className="flex flex-col justify-center gap-4 p-6 lg:w-2/3 lg:p-8">
+            <Badge className="w-fit uppercase">Head Coach</Badge>
+            <div>
+              <p className="text-2xl font-semibold">{coach.name}</p>
+              <p className="mt-1 text-lg text-muted-foreground">{coach.title}</p>
+            </div>
+            {coach.bio && (
+              <p className="text-sm leading-relaxed text-muted-foreground">{coach.bio}</p>
+            )}
+            {coach.units && coach.units.length > 0 && (
+              <div className="flex flex-wrap gap-2 pt-2">
+                {coach.units.map((u) => (
+                  <Badge key={u} variant="secondary">
+                    {u}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </CardContent>
+        </div>
+      </Card>
+    )
+  }
+
+  return (
+    <Card className="group overflow-hidden transition-all hover:border-wildcat-gold/50">
+      {hasPhoto ? (
+        <div className="flex gap-4 p-4">
+          <div className="h-32 w-32 shrink-0 overflow-hidden rounded-lg bg-wildcat-charcoal/50">
+            <img
+              src={coach.photo}
+              alt={coach.name}
+              className="h-full w-full object-contain"
+            />
+          </div>
+          <div className="min-w-0 flex-1">
+            <p className="font-semibold">{coach.name}</p>
+            <p className="text-sm text-muted-foreground">{coach.title}</p>
+            {coach.units && coach.units.length > 0 && (
+              <div className="mt-3 flex flex-wrap gap-1">
+                {coach.units.map((u) => (
+                  <Badge key={u} variant="secondary">
+                    {u}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <CardContent className="flex items-start gap-4 p-4 sm:items-center">
+          <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-wildcat-charcoal font-display font-bold text-gold-gradient">
+            {initials(coach.name)}
+          </span>
+          <div className="min-w-0 flex-1">
+            <p className="truncate font-semibold">{coach.name}</p>
+            <p className="text-sm text-muted-foreground">{coach.title}</p>
+            {coach.units && coach.units.length > 0 && (
+              <div className="mt-2 hidden flex-wrap gap-1 sm:flex">
+                {coach.units.map((u) => (
+                  <Badge key={u} variant="secondary">
+                    {u}
+                  </Badge>
+                ))}
+              </div>
+            )}
+          </div>
+        </CardContent>
+      )}
     </Card>
   )
 }

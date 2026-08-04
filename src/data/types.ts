@@ -52,6 +52,8 @@ export interface Coach {
   units?: string[]
   /** Optional short bio, shown on the featured (head coach) card. */
   bio?: string
+  /** Optional photo path in /public, e.g. "/coaches/shelton-felton.jpg" */
+  photo?: string
 }
 
 export interface BoardMember {

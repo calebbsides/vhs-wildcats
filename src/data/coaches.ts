@@ -7,6 +7,7 @@ type CoachEntry = {
   head?: boolean
   units?: readonly string[]
   bio?: string
+  photo?: string
 }
 
 /** Maps the friendly coach entries in content.ts to the app's Coach type. */
@@ -18,5 +19,6 @@ export const coaches: Coach[] = content.coaches.map((raw) => {
     ...(c.head ? { isHead: true } : {}),
     ...(c.units ? { units: [...c.units] } : {}),
     ...(c.bio ? { bio: c.bio } : {}),
+    ...(c.photo ? { photo: c.photo } : {}),
   }
 })
