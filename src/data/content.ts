@@ -267,7 +267,7 @@ export const content = {
       photo: "/coaches/placeholder.jpeg",
       bio: "Leading the most storied program in high school football — 976-265-34 all-time (.779) with 6 national, 24 state, and 43 region championships since 1913.",
     },
-    { name: "J.T. Black", title: "Assistamt Head Coach", units: ["Offensive Line"], photo: "/coaches/placeholder.jpeg" },
+    { name: "J.T. Black", title: "Assistamt Head Coach", units: ["Offensive Line"], photo: "/coaches/black.jpeg" },
     { name: "Keith Barefield", title: "Offensive Coordinator", units: ["Quarterbacks"], photo: "/coaches/placeholder.jpeg" },
     { name: "LaBrandon Hudson", title: "Defensive Coordinator", units: ["Safties"], photo: "/coaches/placeholder.jpeg" },
     { name: "Jay Rome", title: "Co-Offensive Coordinator", units: ["Wide Receivers"], photo: "/coaches/placeholder.jpeg" },
