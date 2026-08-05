@@ -264,7 +264,7 @@ export const content = {
       title: "Head Coach",
       head: true,
       units: ["Program"],
-      photo: "/coaches/placeholder.jpeg",
+      photo: "/coaches/felton.jpeg",
       bio: "Leading the most storied program in high school football — 976-265-34 all-time (.779) with 6 national, 24 state, and 43 region championships since 1913.",
     },
     { name: "J.T. Black", title: "Assistant Head Coach", units: ["Offensive Line"], photo: "/coaches/black.jpeg" },
