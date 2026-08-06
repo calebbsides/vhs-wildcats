@@ -286,7 +286,7 @@ export const content = {
     { name: "Clay Brindger", title: "Director of Football Operations", photo: "/coaches/brindger.jpeg" },
     { name: "Ben Sigers", title: "Athletic Trainer", photo: "/coaches/sigers.jpeg" },
     { name: "Justin Crenshaw", title: "Team Chaplain", photo: "/coaches/crenshaw.jpeg" },
-    { name: "Justin Henderson Carter", title: "Head Coach Assistant", photo: "/coaches/carter.jpeg" },
+    { name: "Justin Henderson Carter", title: "Head Coach Assistant", photo: "/coaches/carter.jpg" },
     { name: "Tracy Jackson", title: "Executive Assistant, Athletics", photo: "/coaches/jackson.jpeg" },
   ],
 
