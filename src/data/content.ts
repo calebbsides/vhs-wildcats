@@ -263,7 +263,7 @@ export const content = {
       name: "Shelton Felton",
       title: "Head Coach",
       head: true,
-      units: ["Program"],
+      units: ["D.A.T.E."],
       photo: "/coaches/felton2.jpeg",
       bio: "Leading the most storied program in high school football — 976-265-34 all-time (.779) with 6 national, 24 state, and 43 region championships since 1913.",
     },
