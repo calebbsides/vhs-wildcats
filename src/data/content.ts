@@ -130,7 +130,7 @@ export const content = {
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "Scrimmage",
       scrimmage: true,
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 45, opponent: 7, recap: "Valdosta High School hosted Worth County High School in a preseason football scrimmage on Friday, August 7, 2026, at Bazemore-Hyder Stadium. The matchup gave both programs an early opportunity to evaluate players, test schemes, and build game-ready chemistry before the regular season. Kickoff was scheduled for 8:00 p.m., with the Wildcats welcoming the Rams to one of Georgia high school football’s most historic venues." },
     },
     {
       opponent: "Jones County",
