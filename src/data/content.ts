@@ -233,8 +233,8 @@ export const content = {
    *  ⚠️ The names below are PLACEHOLDERS — replace them with the real roster.
    * ---------------------------------------------------------------------- */
   roster: [
-     { number: 0, name: "Bralyn Bennett", position: "OLB, DE", grade: "SR", heightIn: 6'2", weightLb: 225 },
-     { number: 1, name: "Jamarian Mingo", position: "WR,CB", grade: "SR", heightIn: 6'2", weightLb: 180 },
+     { number: 0, name: "Bralyn Bennett", position: "OLB, DE", grade: "SR", heightIn: 74, weightLb: 225 },
+     { number: 1, name: "Jamarian Mingo", position: "WR,CB", grade: "SR", heightIn: 74, weightLb: 180 },
      { number: 2, name: "Lamar Thomas Jr.", position: "QB", grade: "SO", heightIn: 70, weightLb: 190 },
   //   { number: 21, name: "Andre Wallace", position: "RB", grade: "SR", heightIn: 70, weightLb: 205 },
   //   { number: 24, name: "Chris Daniels", position: "S", grade: "JR", heightIn: 72, weightLb: 190 },
