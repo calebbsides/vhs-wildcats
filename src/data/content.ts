@@ -138,7 +138,7 @@ export const content = {
       time: "8:00 PM",
       where: "away",
       venue: "Gray, GA",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 52, opponent: 14, recap: "Valdosta opened the 2026 football season in emphatic fashion Friday night, rolling past Jones County 52–14 on the road. The Wildcats’ offense set the tone early and maintained control throughout, turning the season opener into a decisive statement win against a Greyhounds team coming off a six-win season." },
     },
     {
       opponent: "Howard",
