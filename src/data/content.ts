@@ -328,7 +328,7 @@ export const content = {
      { number: 93, name: "Corey Sims, Jr.", position: "DL", grade: "JR", heightIn: 70, weightLb: 275 },
      { number: 95, name: "Alans Garcia", position: "K", grade: "SO", heightIn: 64, weightLb: 135 },
      { number: 95, name: "Arjay Burnett", position: "DL", grade: "SO", heightIn: 70, weightLb: 195 },
-  //   { number: 98, name: "Elijah O'Neil", position: "DL", grade: "SO", heightIn: 67, weightLb: 350 },
+     { number: 98, name: "Elijah O'Neil", position: "DL", grade: "SO", heightIn: 67, weightLb: 350 },
   //   { number: 99, name: "Kieran Johnson", position: "DL", grade: "SR", heightIn: 76, weightLb: 300 },
   //   { number: 00, name: "Blake Givens", position: "OL", grade: "S0", heightIn: 65, weightLb: 170 },
   //   { number: 00, name: "Imarion Drayton", position: "TE", grade: "FR", heightIn: 76, weightLb: 235 },
