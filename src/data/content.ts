@@ -251,7 +251,7 @@ export const content = {
      { number: 10, name: "Jordin Foster", position: "DL", grade: "JR", heightIn: 71, weightLb: 255 },
      { number: 11, name: "Tripp Perry", position: "QB", grade: "SR", heightIn: 73, weightLb: 180 },
      { number: 11, name: "Brennan Lampkin", position: "DL", grade: "SO", heightIn: 70, weightLb: 280 },
-     { number: 12, name: "Alanns Garcia", position: "K", grade: "SO", heightIn: , weightLb:  },
+     { number: 12, name: "Alanns Garcia", position: "K", grade: "SO" },
   //   { number: 66, name: "Cam Roberts", position: "OL", grade: "JR", heightIn: 75, weightLb: 295 },
   //   { number: 72, name: "Devin Pratt", position: "DL", grade: "SR", heightIn: 75, weightLb: 275 },
   //   { number: 88, name: "Xavier Greene", position: "TE", grade: "SO", heightIn: 77, weightLb: 230 }, 
