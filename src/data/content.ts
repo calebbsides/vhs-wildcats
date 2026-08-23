@@ -319,7 +319,7 @@ export const content = {
      { number: 82, name: "Torrey Leggett III", position: "WR", grade: "JR", heightIn: 68, weightLb: 150 },
      { number: 83, name: "Tallen Tarpley", position: "WR", grade: "SO", heightIn: 69, weightLb: 140 },
      { number: 85, name: "Aiden Earle", position: "DB", grade: "SO", heightIn: 66, weightLb: 115 },
-   //  { number: 87, name: "Kei'mon McGhee", position: "WR", grade: "SO", heightIn: 68, weightLb: 160 },
+     { number: 87, name: "Kei'mon McGhee", position: "WR", grade: "SO", heightIn: 68, weightLb: 160 },
    //  { number: 88, name: "Bryson Johnson", position: "K", grade: "JR", heightIn: 69, weightLb: 175 },
    //  { number: 89, name: "Montanez Arnold", position: "WR", grade: "SO", heightIn: 67, weightLb: 130 },
    //  { number: 90, name: "Lawson Waldrep", position: "K", grade: "JR", heightIn: 68, weightLb: 180 },
