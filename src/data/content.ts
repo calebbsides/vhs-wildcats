@@ -317,7 +317,7 @@ export const content = {
      { number: 80, name: "Michael Harp", position: "WR", grade: "SO" },
      { number: 80, name: "Jelani Ellis", position: "DB", grade: "SO", heightIn: 68, weightLb: 132 },
      { number: 82, name: "Torrey Leggett III", position: "WR", grade: "JR", heightIn: 68, weightLb: 150 },
-   //  { number: 83, name: "Tallen Tarpley", position: "WR", grade: "SO", heightIn: 69, weightLb: 140 },
+     { number: 83, name: "Tallen Tarpley", position: "WR", grade: "SO", heightIn: 69, weightLb: 140 },
    //  { number: 85, name: "Aiden Earle", position: "DB", grade: "SO", heightIn: 66, weightLb: 115 },
    //  { number: 87, name: "Kei'mon McGhee", position: "WR", grade: "SO", heightIn: 68, weightLb: 160 },
    //  { number: 88, name: "Bryson Johnson", position: "K", grade: "JR", heightIn: 69, weightLb: 175 },
