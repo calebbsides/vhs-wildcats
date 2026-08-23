@@ -308,7 +308,7 @@ export const content = {
      { number: 67, name: "Jeremiah Moseley", position: "DL", grade: "SO", heightIn: 68, weightLb: 220 },
      { number: 68, name: "Elijah Boyd", position: "OL", grade: "SR", heightIn: 70, weightLb: 215 },
      { number: 70, name: "Tyler Richardson", position: "OL,T", grade: "SR", heightIn: 70, weightLb: 300 },
-     { number: 71, name: "Brice Cooper", position: "TE, OL", grade: "SR", heightIn: 74, weightLb: 235 },
+     { number: 71, name: "Brice Cooper", position: "TE,OL", grade: "SR", heightIn: 74, weightLb: 235 },
      { number: 72, name: "Jaiden White", position: "OL", grade: "SO", heightIn: 73, weightLb: 260 },
      { number: 74, name: "Adron Thomas", position: "OL", grade: "SR", heightIn: 76, weightLb: 320 },
      { number: 77, name: "Jah'khias Neloms", position: "OL", grade: "SR", heightIn: 73, weightLb: 300 },
