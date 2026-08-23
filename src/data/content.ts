@@ -313,7 +313,7 @@ export const content = {
      { number: 74, name: "Adron Thomas", position: "OL", grade: "SR", heightIn: 76, weightLb: 320 },
      { number: 77, name: "Jah'khias Neloms", position: "OL", grade: "SR", heightIn: 73, weightLb: 300 },
      { number: 78, name: "Caden Burroughs", position: "DL", grade: "SR", heightIn: 71, weightLb: 250 },
-    // { number: 79, name: "Austin Spray", position: "OL", grade: "SR", heightIn: 73, weightLb: 285 },
+     { number: 79, name: "Austin Spray", position: "OL", grade: "SR", heightIn: 73, weightLb: 285 },
     // { number: 80, name: "Michael Harp", position: "WR", grade: "SO" },
     // { number: 80, name: "Jelani Ellis", position: "DB", grade: "SO", heightIn: 68, weightLb: 132 },
     // { number: 82, name: "Torrey Leggett III", position: "WR", grade: "JR", heightIn: 68, weightLb: 150 },
