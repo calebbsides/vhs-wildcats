@@ -91,7 +91,7 @@ export default function App() {
           id="roster"
           eyebrow="The Squad"
           title="Meet the Wildcats"
-          description="The players carrying on the Winnersville tradition."
+          description="The players carrying on the Wildcat tradition."
           className="bg-wildcat-charcoal/30"
         >
           <Roster />
