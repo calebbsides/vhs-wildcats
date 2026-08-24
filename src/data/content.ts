@@ -174,7 +174,7 @@ export const content = {
       // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
     },
     {
-      opponent: "Booker High (Sarasota, FL)",
+      opponent: "Booker High (Sarasota, FL) ----- CANCELLED",
       date: "2026-10-02",
       time: "8:00 PM",
       where: "home",
