@@ -146,7 +146,7 @@ export const content = {
       time: "8:00 PM",
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+       result: { wildcats: 56, opponent: 6, recap: "Valdosta opened its 2026 home schedule in dominant fashion Friday night, overwhelming the Howard Huskies 56–6 at Bazemore-Hyder Stadium. The Wildcats controlled the game from the outset and never allowed Howard to establish momentum, turning their first home appearance of the season into a decisive non-region victory." },
     },
     {
       opponent: "Bradwell Institute",
