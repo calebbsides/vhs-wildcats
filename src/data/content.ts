@@ -154,7 +154,7 @@ export const content = {
       time: "8:00 PM",
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+       result: { wildcats: 56, opponent: 13, recap: "Valdosta continued its impressive early-season run Friday night, defeating Bradwell Institute in a high-profile non-region matchup at Bazemore-Hyder Stadium. The Wildcats entered the night unbeaten and ranked No. 6 in Class 7A, while Bradwell arrived at 2–0 after averaging 56 points per game in its first two contests. The meeting tested two of Georgia’s most productive offenses, but Valdosta’s balance, playmaking ability, and defensive intensity again made the difference." },
     },
     {
       opponent: "KIPP Atlanta Collegiate",
