@@ -163,7 +163,9 @@ export const content = {
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "Homecoming",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+       result: { wildcats: 58, opponent: 18, recap: "Valdosta High School continued its unbeaten start Friday night, rolling to a 58-18 non-region victory over KIPP Atlanta Collegiate at Bazemore-Hyder Stadium.
+
+The Wildcats took control early and never let the Warriors gain traction, building a commanding 31-6 halftime advantage. Valdosta’s offense consistently created explosive opportunities, while its defense limited KIPP Atlanta Collegiate’s ability to sustain drives and turn momentum in its favor." },
     },
     {
       opponent: "Stockbridge",
