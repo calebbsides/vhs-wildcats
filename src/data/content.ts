@@ -181,7 +181,7 @@ export const content = {
       time: "8:00 PM",
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 1, opponent: 0, recap: "Game won by Valdosta due to forfeiture. Booker High School cancelled the 2026 football season." },
     },
     {
       opponent: "Colquitt County",
