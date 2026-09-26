@@ -173,7 +173,7 @@ export const content = {
       time: "8:00 PM",
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 58, opponent: 21, recap: "Valdosta High stayed unbeaten with a 58–21 home win over Stockbridge on September 25. The Wildcats’ offense topped 50 points for the fifth straight game, ending the Tigers’ three-game winning streak." },
     },
     {
       opponent: "Booker High (Sarasota, FL) ----- CANCELLED",
