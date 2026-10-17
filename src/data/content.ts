@@ -190,7 +190,7 @@ export const content = {
       where: "away",
       venue: "Mack Tharpe Stadium",
       label: "Region",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 52, opponent: 44, recap: "The Valdosta Wildcats outlasted Colquitt County 52–44 Friday night, earning their first win in Moultrie in 16 years. After building a 21–0 lead, Valdosta held off a furious Packers comeback and recovered a fumble in the final minute to seal the victory. The Wildcats improved to 7–0 overall and 1–0 in region play." },
     },
     {
       opponent: "Camden County",
