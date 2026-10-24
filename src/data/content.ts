@@ -199,9 +199,7 @@ export const content = {
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "Region",
-      result: { wildcats: 63, opponent: 10, recap: "The Valdosta Wildcats rolled past Camden County 63–10 Friday night, Oct. 23, at Bazemore-Hyder Stadium. Valdosta’s offense piled up points while its defense held the visiting Wildcats to just 10, delivering a commanding region victory in front of the home crowd.
-
-" },
+      result: { wildcats: 63, opponent: 10, recap: "The Valdosta Wildcats rolled past Camden County 63–10 Friday night, Oct. 23, at Bazemore-Hyder Stadium. Valdosta’s offense piled up points while its defense held the visiting Wildcats to just 10, delivering a commanding region victory in front of the home crowd." },
     },
     {
       opponent: "Lowndes County",
