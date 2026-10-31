@@ -208,7 +208,7 @@ export const content = {
       where: "away",
       venue: "Martin Stadium",
       label: "Winnersville Classic",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 31, opponent: 32, recap: "" },
     },
     {
       opponent: "Richmond Hill",
