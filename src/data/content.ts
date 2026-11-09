@@ -217,7 +217,7 @@ export const content = {
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "Senior Night",
-      // result: { wildcats: 0, opponent: 0, recap: "Short game recap here." },
+      result: { wildcats: 49, opponent: 12, recap: "Valdosta rolled past Richmond Hill 49-12 on Nov. 6 at Bazemore-Hyder Stadium, celebrating Senior Night with head coach Shelton Felton’s 50th win leading the Wildcats. Sophomore quarterback LJ Thomas sparked the offense with 218 passing yards and four touchdowns, while senior running back Deron Foster scored his 26th rushing touchdown of the season to break the school’s single-season record." },
     },
   ],
 
