@@ -226,7 +226,16 @@ export const content = {
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "GHSA Playoffs - Round 1",
-      //result: { wildcats: 0, opponent: 0, recap: "Valdosta rolled past Richmond Hill 49-12 on Nov. 6 at Bazemore-Hyder Stadium, celebrating Senior Night with head coach Shelton Felton’s 50th win leading the Wildcats. Sophomore quarterback LJ Thomas sparked the offense with 218 passing yards and four touchdowns, while senior running back Deron Foster scored his 26th rushing touchdown of the season to break the school’s single-season record." },
+      result: { wildcats: 63, opponent: 7, recap: "Valdosta opened the playoffs with a commanding 63-7 win over West Forsyth on Nov. 13, piling up 581 total yards and seven rushing touchdowns. Deron Foster scored four touchdowns, while Marquis Fennell added 175 rushing yards, 100 receiving yards, and two scores to help send the Wildcats into a second-round matchup against East Coweta." },
+    },
+    {
+      opponent: "East Coweta",
+      date: "2026-11-20",
+      time: "8:00 PM",
+      where: "home",
+      venue: "Cleveland Field at Bazemore-Hyder Stadium",
+      label: "GHSA Playoffs - Round 2",
+      //result: { wildcats: 63, opponent: 7, recap: "Valdosta opened the playoffs with a commanding 63-7 win over West Forsyth on Nov. 13, piling up 581 total yards and seven rushing touchdowns. Deron Foster scored four touchdowns, while Marquis Fennell added 175 rushing yards, 100 receiving yards, and two scores to help send the Wildcats into a second-round matchup against East Coweta." },
     },
   ],
 
