@@ -235,7 +235,16 @@ export const content = {
       where: "home",
       venue: "Cleveland Field at Bazemore-Hyder Stadium",
       label: "GHSA Playoffs - Round 2",
-      //result: { wildcats: 63, opponent: 7, recap: "Valdosta opened the playoffs with a commanding 63-7 win over West Forsyth on Nov. 13, piling up 581 total yards and seven rushing touchdowns. Deron Foster scored four touchdowns, while Marquis Fennell added 175 rushing yards, 100 receiving yards, and two scores to help send the Wildcats into a second-round matchup against East Coweta." },
+      result: { wildcats: 38, opponent: 31, recap: "Valdosta held off a late East Coweta rally for a 38-31 win on Nov. 20, advancing to the state quarterfinals and improving to 11-1. Deron Foster powered the Wildcats with 314 rushing yards and three touchdowns on 51 carries, helping Valdosta overcome four turnovers to keep its playoff run alive." },
+    },
+    {
+      opponent: "Buford",
+      date: "2026-11-27",
+      time: "8:00 PM",
+      where: "home",
+      venue: "Cleveland Field at Bazemore-Hyder Stadium",
+      label: "GHSA Playoffs - Round 3",
+      //result: { wildcats: 38, opponent: 31, recap: "" },
     },
   ],
 
